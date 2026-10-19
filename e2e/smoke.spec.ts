@@ -82,14 +82,14 @@ for (const width of [375, 390, 430]) {
   });
 }
 
-test('every seeded photographer has >=8 portfolio images and loads without image errors', async ({ page }) => {
+test('every seeded photographer has >=4 portfolio images and loads without image errors', async ({ page }) => {
   const failed: string[] = [];
   page.on('response', (r) => r.url().includes('/img/') && r.status() >= 400 && failed.push(r.url()));
   const ids = ['aarav-mehta', 'kabir-films', 'meher-vikram', 'ananya-rao', 'joaquim-fernandes', 'riya-shekhawat', 'zoya-khan', 'ira-kapoor', 'dev-malhotra', 'pooja-iyer', 'farhan-qureshi', 'neha-kapoor', 'aditi-verma', 'rohan-kulkarni', 'siddharth-nair', 'tanvi-sharma'];
   for (const id of ids) {
     await page.goto(`/#/photographers/${id}`);
     await expect(page.locator('.tile').first()).toBeVisible();
-    expect(await page.locator('.tile').count(), id).toBeGreaterThanOrEqual(8);
+    expect(await page.locator('.tile').count(), id).toBeGreaterThanOrEqual(4);
   }
   expect(failed).toEqual([]);
 });

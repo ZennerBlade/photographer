@@ -16,7 +16,7 @@ PRD locked (v1.0). Stack locked. Direction A (Noor Atelier) approved. Working pr
 - `src/data/` - `types.ts`, `api.ts` (only data entry point for UI), `seed/` (photographers, packages, portfolio, categories, generated `images.ts`)
 - `src/lib/` - format (INR), contact (tel/wa.me/mailto), filters (URL query), focus (smart crop), saved (localStorage), motion
 - `src/styles/` - `tokens.css`, `base.css`
-- `public/img/p/` - 148 WebP photos (~12MB); `public/img/CREDITS.md` - source URLs
+- `public/img/p/` - trimmed demo set of WebP photos; `public/img/CREDITS.md` - source URLs
 - `e2e/smoke.spec.ts` + `playwright.config.ts` - Playwright smoke; `scripts/screenshots.mjs` - screenshot capture
 - `CLAUDE.md` - agent entry point
 
