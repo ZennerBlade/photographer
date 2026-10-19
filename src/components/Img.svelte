@@ -38,6 +38,8 @@
 
 <style>
   .img { display: block; position: absolute; inset: 0; background: linear-gradient(135deg, #2a2119, #151110); }
+  .img:not(.loaded):not(.failed):not(.contain) { background: linear-gradient(100deg, #1c1611 30%, #2a2119 50%, #1c1611 70%) 0 0 / 300% 100%; animation: img-sheen 1.6s var(--ease-out) infinite; }
+  @keyframes img-sheen { to { background-position: -300% 0; } }
   .img.contain { background: transparent; }
   .img.failed { background: radial-gradient(circle at 50% 35%, #3a2d20, #151110 70%); }
   .img.failed::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 40%, rgba(212, 176, 106, 0.25) 0 18px, transparent 19px); }

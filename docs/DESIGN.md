@@ -57,3 +57,6 @@ Every photo has `focus` (face centre, `"x% y%"`) and, when faces were detected, 
 - Single column, 375-430px. Tab bar: Home, Photographers, Saved (floating glass pill, hidden on profile where the contact bar sits in the same slot).
 - Contact bar: WhatsApp (gold primary, wider), Call, Email; it shows the chosen package above the bar.
 - Wide screens (>=600px): the same layout inside a 390x844 CSS phone frame (black bezel, notch, `transform: translateZ(0)` so `position: fixed` bars and sheets stay inside the frame). No JS.
+
+## Polish pass (2026-10-19)
+See `docs/design/POLISH_AUDIT.md`. Tokens added: `--ease-expo`, `--shadow-card`, `--shadow-float`; micro-type floor 11px; `--mute` #b0a695. Press states via `.press` / `.press-sm`; `.bar-fade` under the floating bars. Brand name lives only in `src/lib/brand.ts`. PWA: manifest plugin in `vite.config.ts`, `public/sw.js`, icons in `public/icons/`.

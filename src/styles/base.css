@@ -10,7 +10,12 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior: none;
+  font-feature-settings: 'tnum' 0, 'kern', 'liga';
+  text-rendering: optimizeLegibility;
 }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+.num, .price { font-variant-numeric: lining-nums tabular-nums; }
 h1, h2, h3, p { margin: 0; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
@@ -18,7 +23,7 @@ img { display: block; }
 ul { margin: 0; padding: 0; list-style: none; }
 :focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 2px; }
 .serif { font-family: var(--font-serif); }
-.eyebrow { font-size: var(--t-eyebrow); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--gold); font-weight: 400; }
+.eyebrow { font-size: var(--t-eyebrow); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--gold); font-weight: 500; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* ---- App shell + phone frame ---- */
@@ -83,19 +88,33 @@ ul { margin: 0; padding: 0; list-style: none; }
 .page { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; background: var(--bg); }
 .page::-webkit-scrollbar { display: none; }
 .page-pad-bottom { padding-bottom: calc(104px + var(--safe-bottom)); }
-.sec { display: flex; justify-content: space-between; align-items: baseline; margin: 22px var(--gutter) 10px; }
-.sec h2 { font-family: var(--font-serif); font-weight: 500; font-size: var(--t-h2); }
+.sec { display: flex; justify-content: space-between; align-items: baseline; margin: var(--s-8) var(--gutter) var(--s-3); }
+.sec h2 { font-family: var(--font-serif); font-weight: 500; font-size: var(--t-h2); line-height: 1.1; letter-spacing: -0.005em; }
 .sec a, .sec button { font-size: var(--t-xs); color: var(--gold); letter-spacing: var(--track-label); text-transform: uppercase; min-height: 28px; }
 
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: var(--r-pill); font-weight: 500; font-size: 13px; letter-spacing: 0.04em; transition: transform var(--d-fast) var(--ease-out), background var(--d-fast); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: var(--r-pill); font-weight: 500; font-size: 13px; letter-spacing: 0.04em; transition: transform var(--d-fast) var(--ease-expo), background var(--d-fast), box-shadow var(--d-fast); }
 .btn:active { transform: scale(0.97); }
+.btn-gold { box-shadow: inset 0 1px 0 rgba(255, 244, 220, 0.45), 0 10px 24px -12px rgba(212, 176, 106, 0.55); }
 .btn-gold { background: var(--gold); color: var(--on-gold); }
 .btn-ghost { border: 1px solid var(--line-strong); color: var(--gold-hi); }
+
+/* Haptic-like press: every tappable surface compresses slightly and returns on a spring-out curve. */
+:where(a, button, [role='button']) { transition: transform 260ms var(--ease-expo), background-color var(--d-fast), border-color var(--d-fast), color var(--d-fast), opacity var(--d-fast); }
+@media (hover: none) {
+  .press:active { transform: scale(0.985); transition-duration: 90ms; }
+  .press-sm:active { transform: scale(0.95); transition-duration: 90ms; }
+}
+.press:active { transform: scale(0.985); transition-duration: 90ms; }
+.press-sm:active { transform: scale(0.95); transition-duration: 90ms; }
+
+/* Bottom fade so content dissolves under the floating bars instead of colliding with them. */
+.bar-fade { position: absolute; left: 0; right: 0; bottom: 0; height: calc(112px + var(--safe-bottom)); pointer-events: none; z-index: 10; background: linear-gradient(180deg, transparent, rgba(13, 11, 9, 0.86) 58%, var(--bg)); }
 
 @keyframes stagger-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .stagger { opacity: 0; animation: stagger-in var(--d-slow) var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 70ms + 80ms); }
 @keyframes shimmer { 0% { background-position: -300px 0; } 100% { background-position: 300px 0; } }
-.skeleton { background: linear-gradient(90deg, var(--surf) 0%, var(--surf-2) 50%, var(--surf) 100%) 0 0 / 600px 100% repeat-x; animation: shimmer 1.4s linear infinite; }
+.skeleton { background: linear-gradient(90deg, var(--surf) 0%, var(--surf-2) 50%, var(--surf) 100%) 0 0 / 600px 100% repeat-x; animation: shimmer 1.8s var(--ease-out) infinite; border: 1px solid var(--line); }
+.sk-line { display: block; height: 12px; border-radius: 6px; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }

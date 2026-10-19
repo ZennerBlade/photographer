@@ -1,4 +1,4 @@
-import { cubicOut } from 'svelte/easing';
+import { cubicOut, expoOut } from 'svelte/easing';
 import { animate, spring } from 'motion';
 
 export const reduced = (): boolean => typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -12,7 +12,7 @@ export function pageIn(_node: Element, { delay = 0 } = {}) {
 /** Bottom sheet slide-up. */
 export function sheetIn(_node: Element, { duration = 420 } = {}) {
   const r = reduced();
-  return { duration: r ? 0 : duration, easing: cubicOut, css: (t: number, u: number) => `transform:translateY(${u * 100}%)` };
+  return { duration: r ? 0 : duration, easing: expoOut, css: (t: number, u: number) => `transform:translateY(${u * 100}%)` };
 }
 export function fadeIn(_node: Element, { duration = 300 } = {}) {
   const r = reduced();

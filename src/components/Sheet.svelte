@@ -46,13 +46,14 @@
 
 <style>
   .root { position: fixed; inset: 0; z-index: var(--z-sheet); }
-  .backdrop { position: absolute; inset: 0; width: 100%; background: rgba(5, 4, 3, 0.62); backdrop-filter: blur(3px); }
-  .panel { position: absolute; left: 0; right: 0; bottom: 0; max-height: 86%; display: flex; flex-direction: column; background: #14100d; border: 1px solid var(--line); border-bottom: 0; border-radius: 28px 28px 0 0; outline: none; transition: transform var(--d-base) var(--ease-out); }
-  .grab { padding: 10px 0 2px; display: grid; place-items: center; touch-action: none; cursor: grab; }
+  .backdrop { position: absolute; inset: 0; width: 100%; background: rgba(5, 4, 3, 0.66); backdrop-filter: blur(6px); }
+  .panel { position: absolute; left: 0; right: 0; bottom: 0; max-height: 86%; display: flex; flex-direction: column; background: linear-gradient(180deg, #1a1511, #14100d 120px); border: 1px solid var(--line-strong); border-bottom: 0; border-radius: 28px 28px 0 0; outline: none; box-shadow: 0 -24px 60px -20px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 240, 215, 0.08); transition: transform var(--d-base) var(--ease-expo); }
+  .grab { padding: var(--s-3) 0 var(--s-1); display: grid; place-items: center; touch-action: none; cursor: grab; }
   .grab i { width: 38px; height: 4px; border-radius: 4px; background: var(--line-strong); }
-  header { display: flex; justify-content: space-between; align-items: center; padding: 6px 20px 8px 24px; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: var(--s-2) var(--s-5) var(--s-3) var(--s-6); }
   h2 { font-family: var(--font-serif); font-weight: 500; font-size: 26px; }
   .x { width: var(--tap); height: var(--tap); display: grid; place-items: center; border-radius: 50%; color: var(--mute); }
-  .content { overflow-y: auto; padding: 4px 24px 18px; scrollbar-width: none; }
-  footer { padding: 14px 24px calc(18px + var(--safe-bottom)); border-top: 1px solid var(--line); display: flex; gap: 10px; background: #14100d; }
+  .x:active { transform: scale(0.9); background: rgba(255, 255, 255, 0.06); }
+  .content { overflow-y: auto; padding: var(--s-1) var(--s-6) var(--s-5); scrollbar-width: none; }
+  footer { padding: var(--s-4) var(--s-6) calc(var(--s-5) + var(--safe-bottom)); border-top: 1px solid var(--line); display: flex; gap: 10px; background: #14100d; }
 </style>

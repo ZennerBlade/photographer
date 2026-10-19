@@ -61,7 +61,8 @@
   section:last-child { border: 0; }
   h3 { font-size: 10px; letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 12px; }
   .row { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip { min-height: 40px; padding: 0 16px; border-radius: var(--r-pill); border: 1px solid var(--line-strong); color: var(--ink-soft); font-size: 13px; transition: all var(--d-fast); }
+  .chip { min-height: 40px; padding: 0 16px; border-radius: var(--r-pill); border: 1px solid var(--line-strong); color: var(--ink-soft); font-size: var(--t-sm); }
+  .chip:active { transform: scale(0.95); }
   .chip.on { background: var(--gold); color: var(--on-gold); border-color: var(--gold); font-weight: 500; }
   .apply { flex: 1; }
   .apply:disabled { opacity: 0.5; }

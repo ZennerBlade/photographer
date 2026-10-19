@@ -22,6 +22,6 @@
   <div class="device">
     <div class="notch" aria-hidden="true"></div>
     <Router {routes} />
-    {#if !hideTabs && known}<TabBar path={router.location} />{/if}
+    {#if !hideTabs && known}<div class="bar-fade" aria-hidden="true"></div><TabBar path={router.location} />{/if}
   </div>
 </div>

@@ -15,7 +15,7 @@ PRD locked (v1.0). Stack locked. Direction A (Noor Atelier) approved. Working pr
 - `src/components/` - Img (focal-point crops), Sheet, FilterSheet, SortSheet, Viewer, TabBar, cards, HeartButton, Icon
 - `src/data/` - `types.ts`, `api.ts` (only data entry point for UI), `seed/` (photographers, packages, portfolio, categories, generated `images.ts`)
 - `src/lib/` - format (INR), contact (tel/wa.me/mailto), filters (URL query), focus (smart crop), saved (localStorage), motion
-- `src/styles/` - `tokens.css`, `base.css`
+- `src/styles/` - `tokens.css`, `base.css`; `src/lib/brand.ts` (brand name, one-line rename); `public/sw.js` + `public/icons/` (PWA)
 - `public/img/p/` - curated Pexels demo set (4 per portfolio, plus `lead-<slug>.webp` portraits of each studio lead); `public/img/CREDITS.md` - source URLs
 - `e2e/smoke.spec.ts` + `playwright.config.ts` - Playwright smoke; `scripts/screenshots.mjs` - screenshot capture
 - `CLAUDE.md` - agent entry point

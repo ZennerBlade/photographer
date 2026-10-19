@@ -74,10 +74,10 @@
       <input type="search" bind:value={qInput} oninput={onsearch} placeholder="Search city, style or photographer" aria-label="Search" enterkeyhint="search" />
     </label>
     <div class="ctrls">
-      <button class="pill" onclick={() => (sheet = 'filters')} aria-haspopup="dialog">
+      <button class="pill press-sm" onclick={() => (sheet = 'filters')} aria-haspopup="dialog">
         <Icon name="sliders" size={17} /> Filters {#if nActive}<em aria-label={`${nActive} active`}>{nActive}</em>{/if}
       </button>
-      <button class="pill" onclick={() => (sheet = 'sort')} aria-haspopup="dialog"><Icon name="sort" size={17} /> {sortLabel}</button>
+      <button class="pill press-sm" onclick={() => (sheet = 'sort')} aria-haspopup="dialog"><Icon name="sort" size={17} /> {sortLabel}</button>
     </div>
     <div class="quick" role="group" aria-label="Category">
       <button class:on={quickActive === ''} onclick={() => quickCat('')}>All</button>
@@ -111,23 +111,24 @@
 
 <style>
   .head { padding: calc(var(--safe-top) + 22px) var(--gutter) 12px; }
-  h1 { font-family: var(--font-serif); font-weight: 500; font-size: 38px; line-height: 1; margin-top: 8px; }
-  .count { color: var(--mute); font-size: 12px; margin-top: 6px; }
-  .sticky { position: sticky; top: 0; z-index: 5; padding: 6px var(--gutter) 12px; background: linear-gradient(180deg, var(--bg) 82%, transparent); display: flex; flex-direction: column; gap: 10px; }
-  .search { height: 46px; border: 1px solid var(--line); border-radius: var(--r-pill); display: flex; align-items: center; gap: 10px; padding: 0 16px; color: var(--mute); background: var(--surf); }
-  .search:focus-within { border-color: var(--line-strong); }
+  h1 { font-family: var(--font-serif); font-weight: 500; font-size: 38px; line-height: 1; margin-top: var(--s-2); letter-spacing: -0.012em; }
+  .count { color: var(--mute); font-size: var(--t-xs); margin-top: var(--s-2); }
+  .sticky { position: sticky; top: 0; z-index: 5; padding: var(--s-2) var(--gutter) var(--s-4); background: linear-gradient(180deg, var(--bg) 84%, transparent); display: flex; flex-direction: column; gap: var(--s-3); }
+  .search { height: 46px; border: 1px solid var(--line); border-radius: var(--r-pill); display: flex; align-items: center; gap: 10px; padding: 0 16px; color: var(--mute); background: var(--surf); transition: border-color var(--d-fast), box-shadow var(--d-base); }
+  .search:focus-within { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(212, 176, 106, 0.12); }
   input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: var(--ink); font: inherit; font-size: 13px; }
   input::placeholder { color: var(--mute); opacity: 1; }
   .ctrls { display: flex; gap: 8px; }
-  .pill { height: 42px; padding: 0 16px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line-strong); border-radius: var(--r-pill); color: var(--gold-hi); font-size: 12.5px; font-weight: 400; max-width: 100%; white-space: nowrap; }
+  .pill { height: 42px; padding: 0 16px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line-strong); border-radius: var(--r-pill); color: var(--gold-hi); font-size: var(--t-sm); font-weight: 400; max-width: 100%; white-space: nowrap; }
   .pill em { font-style: normal; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: var(--gold); color: var(--on-gold); font-size: 10.5px; font-weight: 600; display: grid; place-items: center; }
-  .quick { display: flex; gap: 8px; overflow-x: auto; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); scrollbar-width: none; }
+  .quick { display: flex; gap: var(--s-2); overflow-x: auto; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); scroll-snap-type: x proximity; }
   .quick::-webkit-scrollbar { display: none; }
-  .quick button { flex: none; min-height: 36px; padding: 0 14px; font-size: 12px; color: var(--mute); border-radius: var(--r-pill); transition: all var(--d-fast); }
+  .quick button { flex: none; min-height: 36px; padding: 0 var(--s-4); font-size: var(--t-sm); color: var(--mute); border-radius: var(--r-pill); }
+  .quick button:active { transform: scale(0.95); }
   .quick button.on { color: var(--gold-hi); background: rgba(212, 176, 106, 0.12); box-shadow: inset 0 0 0 1px var(--line-strong); }
   .results { padding-top: 4px; }
-  .sk { height: 160px; margin: 0 var(--gutter) 14px; border-radius: var(--r-xl); }
-  .empty { margin: 24px var(--gutter) 0; padding: 36px 24px; border: 1px dashed var(--line-strong); border-radius: var(--r-xl); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+  .sk { height: 168px; margin: 0 var(--gutter) var(--s-4); border-radius: var(--r-xl); }
+  .empty { margin: 24px var(--gutter) 0; padding: 36px 24px; border: 1px dashed var(--line-strong); border-radius: var(--r-xl); background: radial-gradient(120% 80% at 50% 0%, rgba(212, 176, 106, 0.07), transparent 70%); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
   .ring { width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--line-strong); display: grid; place-items: center; color: var(--gold); }
   h2 { font-family: var(--font-serif); font-weight: 500; font-size: 26px; }
   .empty p { color: var(--ink-soft); font-size: 13px; line-height: 1.6; max-width: 240px; }
