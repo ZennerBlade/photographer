@@ -70,7 +70,7 @@ test('home to saved journey', async ({ page }) => {
 for (const width of [375, 390, 430]) {
   test(`no horizontal overflow at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
-    for (const route of ['/', '/photographers', '/photographers/aarav-mehta', '/photographers/farhan-qureshi', '/saved', '/nope']) {
+    for (const route of ['/', '/photographers', '/photographers/aarav-mehta', '/photographers/jonas-keller', '/saved', '/nope']) {
       await page.goto(`/#${route}`);
       await page.waitForTimeout(700);
       const over = await page.evaluate(() => {
@@ -85,7 +85,7 @@ for (const width of [375, 390, 430]) {
 test('every seeded photographer has >=4 portfolio images and loads without image errors', async ({ page }) => {
   const failed: string[] = [];
   page.on('response', (r) => r.url().includes('/img/') && r.status() >= 400 && failed.push(r.url()));
-  const ids = ['aarav-mehta', 'kabir-films', 'meher-vikram', 'ananya-rao', 'joaquim-fernandes', 'riya-shekhawat', 'zoya-khan', 'ira-kapoor', 'dev-malhotra', 'pooja-iyer', 'farhan-qureshi', 'neha-kapoor', 'aditi-verma', 'rohan-kulkarni', 'siddharth-nair', 'tanvi-sharma'];
+  const ids = ['aarav-mehta', 'rivera-films', 'lukas-brandt', 'camille-laurent', 'joaquim-fernandes', 'eleanor-whitfield', 'zoya-khan', 'sofia-marin', 'callum-reid', 'amara-okafor', 'jonas-keller', 'freya-mitchell', 'hannah-lindqvist', 'elias-novak', 'marcus-adebayo', 'greta-holm'];
   for (const id of ids) {
     await page.goto(`/#/photographers/${id}`);
     await expect(page.locator('.tile').first()).toBeVisible();

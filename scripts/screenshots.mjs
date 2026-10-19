@@ -26,17 +26,17 @@ await scrollPage(2600); await shot('05c-profile-packages');
 await page.locator('.tile').nth(2).click(); await shot('06-viewer');
 await page.keyboard.press('Escape');
 await page.locator('.nav .heart').click();
-await page.goto(`${BASE}/#/photographers/riya-shekhawat`); await shot('04b-profile-riya');
+await page.goto(`${BASE}/#/photographers/eleanor-whitfield`); await shot('04b-profile-riya');
 await page.locator('.nav .heart').click();
 await page.goto(`${BASE}/#/saved`); await shot('07-saved');
 await page.goto(`${BASE}/#/photographers?city=Goa&price=120p`); await shot('08-empty');
 await page.goto(`${BASE}/#/nope`); await shot('09-404');
-for (const id of ['kabir-films','ira-kapoor','dev-malhotra','pooja-iyer','rohan-kulkarni','tanvi-sharma','zoya-khan','farhan-qureshi','neha-kapoor','aditi-verma','siddharth-nair','ananya-rao','meher-vikram','joaquim-fernandes']) {
+for (const id of ['rivera-films','sofia-marin','callum-reid','amara-okafor','elias-novak','greta-holm','zoya-khan','jonas-keller','freya-mitchell','hannah-lindqvist','marcus-adebayo','camille-laurent','lukas-brandt','joaquim-fernandes']) {
   await page.goto(`${BASE}/#/photographers/${id}`); await page.waitForTimeout(900); await page.screenshot({ path: `${OUT}/all/hero-${id}.png`, clip: { x: 0, y: 0, width: 390, height: 520 } });
 }
 const wide = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
 const wp = await wide.newPage();
 await wp.goto(`${BASE}/#/`); await wp.waitForTimeout(1500); await wp.screenshot({ path: `${OUT}/10-frame-1440.png` });
-await wp.goto(`${BASE}/#/photographers/ira-kapoor`); await wp.waitForTimeout(1500); await wp.screenshot({ path: `${OUT}/10b-frame-1440-profile.png` });
+await wp.goto(`${BASE}/#/photographers/sofia-marin`); await wp.waitForTimeout(1500); await wp.screenshot({ path: `${OUT}/10b-frame-1440-profile.png` });
 await browser.close();
 console.log('console errors:', errors);

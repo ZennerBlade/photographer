@@ -79,19 +79,19 @@ Cropped to 4:5 from the Pexels originals (`https://www.pexels.com/photo/<id>/`),
 
 | File | Pexels photo |
 |---|---|
-| p/lead-kabir-films.webp | https://www.pexels.com/photo/11478423/ |
-| p/lead-meher-vikram.webp | https://www.pexels.com/photo/5594185/ |
+| p/lead-rivera-films.webp | https://www.pexels.com/photo/11478423/ |
+| p/lead-lukas-brandt.webp | https://www.pexels.com/photo/5594185/ |
 | p/lead-joaquim-fernandes.webp | https://www.pexels.com/photo/15669231/ |
 | p/lead-aarav-mehta.webp | https://www.pexels.com/photo/16597255/ |
-| p/lead-ananya-rao.webp | https://www.pexels.com/photo/12678150/ |
-| p/lead-rohan-kulkarni.webp | https://www.pexels.com/photo/27532972/ |
-| p/lead-ira-kapoor.webp | https://www.pexels.com/photo/36580588/ |
-| p/lead-aditi-verma.webp | https://www.pexels.com/photo/19826587/ |
-| p/lead-tanvi-sharma.webp | https://www.pexels.com/photo/9839519/ |
-| p/lead-farhan-qureshi.webp | https://www.pexels.com/photo/2799785/ |
-| p/lead-siddharth-nair.webp | https://www.pexels.com/photo/7618388/ |
-| p/lead-dev-malhotra.webp | https://www.pexels.com/photo/20240833/ |
-| p/lead-pooja-iyer.webp | https://www.pexels.com/photo/32169472/ |
-| p/lead-neha-kapoor.webp | https://www.pexels.com/photo/5418316/ |
-| p/lead-riya-shekhawat.webp | https://www.pexels.com/photo/8975673/ |
+| p/lead-camille-laurent.webp | https://www.pexels.com/photo/12678150/ |
+| p/lead-elias-novak.webp | https://www.pexels.com/photo/27532972/ |
+| p/lead-sofia-marin.webp | https://www.pexels.com/photo/36580588/ |
+| p/lead-hannah-lindqvist.webp | https://www.pexels.com/photo/19826587/ |
+| p/lead-greta-holm.webp | https://www.pexels.com/photo/9839519/ |
+| p/lead-jonas-keller.webp | https://www.pexels.com/photo/2799785/ |
+| p/lead-marcus-adebayo.webp | https://www.pexels.com/photo/7618388/ |
+| p/lead-callum-reid.webp | https://www.pexels.com/photo/20240833/ |
+| p/lead-amara-okafor.webp | https://www.pexels.com/photo/32169472/ |
+| p/lead-freya-mitchell.webp | https://www.pexels.com/photo/5418316/ |
+| p/lead-eleanor-whitfield.webp | https://www.pexels.com/photo/8975673/ |
 | p/lead-zoya-khan.webp | https://www.pexels.com/photo/18529574/ |
