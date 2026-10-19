@@ -1,0 +1,61 @@
+import type { CategoryId, City, Filters, Package, Photographer, PortfolioImage, SortKey } from './types';
+import { CATEGORIES, CITIES } from './seed/categories';
+import { PHOTOGRAPHERS_RAW } from './seed/photographers';
+import { PACKAGES } from './seed/packages';
+import { PORTFOLIO } from './seed/portfolio';
+import { IMAGES } from './seed/images';
+import { PRICE_BANDS } from '../lib/filters';
+
+/** The only module the UI imports for data. Promise-shaped so a real API can replace it later. */
+const phones = (n: number) => `+91 99999 ${String(n).padStart(5, '0')}`;
+const PHOTOGRAPHERS: Photographer[] = PHOTOGRAPHERS_RAW.map(({ n, ...p }) => ({
+  ...p,
+  startingPrice: Math.min(...PACKAGES.filter((k) => k.photographerId === p.id).map((k) => k.price)),
+  contact: { phone: phones(n), whatsapp: phones(n), email: `${p.id}@example.com` },
+}));
+
+const delay = <T>(v: T): Promise<T> => (import.meta.env.DEV ? new Promise((r) => setTimeout(() => r(v), 220)) : Promise.resolve(v));
+
+export const imageMeta = (id: string) => IMAGES[id];
+export const getCategories = () => CATEGORIES;
+export const getCities = (): Promise<readonly City[]> => delay(CITIES);
+
+export function matches(p: Photographer, f: Filters): boolean {
+  if (f.categories.length && !f.categories.some((c) => p.categories.includes(c))) return false;
+  if (f.city && p.city !== f.city) return false;
+  const band = PRICE_BANDS.find((b) => b.id === f.price)!;
+  if (p.startingPrice < band.min || p.startingPrice >= band.max) return false;
+  if (p.rating < f.minRating) return false;
+  const q = f.q.trim().toLowerCase();
+  if (q) {
+    const hay = [p.name, p.city, p.area, p.tagline, ...p.categories.map((c) => CATEGORIES.find((x) => x.id === c)!.label), ...p.signatureStyle.tags, p.signatureStyle.title].join(' ').toLowerCase();
+    if (!q.split(/\s+/).every((t) => hay.includes(t))) return false;
+  }
+  return true;
+}
+
+export function sortPhotographers(list: Photographer[], sort: SortKey): Photographer[] {
+  const out = [...list];
+  const score = (p: Photographer) => p.rating * Math.log10(p.reviewCount + 10);
+  if (sort === 'rating') out.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
+  else if (sort === 'price-asc') out.sort((a, b) => a.startingPrice - b.startingPrice);
+  else if (sort === 'price-desc') out.sort((a, b) => b.startingPrice - a.startingPrice);
+  else out.sort((a, b) => score(b) - score(a));
+  return out;
+}
+
+export const getPhotographers = (f: Filters, sort: SortKey): Promise<Photographer[]> =>
+  delay(sortPhotographers(PHOTOGRAPHERS.filter((p) => matches(p, f)), sort));
+export const getPhotographer = (id: string): Promise<Photographer | undefined> => delay(PHOTOGRAPHERS.find((p) => p.id === id));
+export const getPhotographersByIds = (ids: string[]): Promise<Photographer[]> =>
+  delay(ids.map((id) => PHOTOGRAPHERS.find((p) => p.id === id)).filter((p): p is Photographer => !!p));
+export const getFeatured = (): Promise<Photographer[]> => delay(sortPhotographers(PHOTOGRAPHERS.filter((p) => p.featured), 'recommended'));
+export const getPortfolio = (id: string, category?: CategoryId): Promise<PortfolioImage[]> =>
+  delay(PORTFOLIO.filter((i) => i.photographerId === id && (!category || i.category === category)));
+export const getPackages = (id: string): Promise<Package[]> => delay(PACKAGES.filter((k) => k.photographerId === id));
+export const countByCategory = (): Record<CategoryId, number> =>
+  Object.fromEntries(CATEGORIES.map((c) => [c.id, PHOTOGRAPHERS.filter((p) => p.categories.includes(c.id)).length])) as Record<CategoryId, number>;
+export const totalPhotographers = PHOTOGRAPHERS.length;
+
+/** Synchronous count used by the filter sheet's live "Show N" button. */
+export const getPhotographerCount = (f: Filters): number => PHOTOGRAPHERS.filter((p) => matches(p, f)).length;

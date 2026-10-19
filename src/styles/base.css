@@ -1,0 +1,103 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--t-base);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+h1, h2, h3, p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+img { display: block; }
+ul { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 2px; }
+.serif { font-family: var(--font-serif); }
+.eyebrow { font-size: var(--t-eyebrow); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--gold); font-weight: 400; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---- App shell + phone frame ---- */
+.device {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--bg);
+  transform: translateZ(0); /* contains position:fixed children (tab bar, sheets, viewer) */
+  isolation: isolate;
+}
+.device::after { /* film grain */
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  z-index: 100;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.notch { display: none; }
+
+@media (min-width: 600px) {
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+    background: radial-gradient(1200px 700px at 50% 20%, #2a2219 0%, #120f0c 60%, #0a0806 100%);
+  }
+  .device-wrap {
+    padding: 12px;
+    border-radius: 58px;
+    background: #050403;
+    box-shadow: 0 50px 90px -30px rgba(0, 0, 0, 0.8), inset 0 0 0 2px #2f2a24, 0 0 0 1px rgba(231, 207, 160, 0.08);
+  }
+  .device {
+    width: 390px;
+    height: min(844px, calc(100dvh - 48px));
+    border-radius: 46px;
+    --safe-top: 44px;
+    --safe-bottom: 10px;
+  }
+  .notch {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 30px;
+    border-radius: 20px;
+    background: #000;
+    z-index: 110;
+  }
+}
+@media (max-width: 599.98px) {
+  .device-wrap { display: contents; }
+}
+
+/* ---- Shared page scaffolding ---- */
+.page { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; background: var(--bg); }
+.page::-webkit-scrollbar { display: none; }
+.page-pad-bottom { padding-bottom: calc(104px + var(--safe-bottom)); }
+.sec { display: flex; justify-content: space-between; align-items: baseline; margin: 22px var(--gutter) 10px; }
+.sec h2 { font-family: var(--font-serif); font-weight: 500; font-size: var(--t-h2); }
+.sec a, .sec button { font-size: var(--t-xs); color: var(--gold); letter-spacing: var(--track-label); text-transform: uppercase; min-height: 28px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: var(--r-pill); font-weight: 500; font-size: 13px; letter-spacing: 0.04em; transition: transform var(--d-fast) var(--ease-out), background var(--d-fast); }
+.btn:active { transform: scale(0.97); }
+.btn-gold { background: var(--gold); color: var(--on-gold); }
+.btn-ghost { border: 1px solid var(--line-strong); color: var(--gold-hi); }
+
+@keyframes stagger-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.stagger { opacity: 0; animation: stagger-in var(--d-slow) var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 70ms + 80ms); }
+@keyframes shimmer { 0% { background-position: -300px 0; } 100% { background-position: 300px 0; } }
+.skeleton { background: linear-gradient(90deg, var(--surf) 0%, var(--surf-2) 50%, var(--surf) 100%) 0 0 / 600px 100% repeat-x; animation: shimmer 1.4s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  .stagger { opacity: 1; animation: none; }
+}
