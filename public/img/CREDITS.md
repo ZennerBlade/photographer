@@ -72,3 +72,26 @@ Source page: `https://www.pexels.com/photo/<id>/`. This is a private on-device d
 | p/18429385.webp | https://www.pexels.com/photo/18429385/ | Inna Perekitnaja | Smiling Mother Holding Daughter on Birthday |
 | p/36211802.webp | https://www.pexels.com/photo/36211802/ | Rizky Sabriansyah | Smiling Woman Celebrating Birthday Indoors |
 | p/16632447.webp | https://www.pexels.com/photo/16632447/ | Rupinder  Korpal | Smiling Indian Bride and Groom in Traditional Costumes |
+
+## Lead portraits (photographer / studio lead)
+
+Cropped to 4:5 from the Pexels originals (`https://www.pexels.com/photo/<id>/`), stored as `p/lead-<slug>.webp`.
+
+| File | Pexels photo |
+|---|---|
+| p/lead-pooja-iyer.webp | https://www.pexels.com/photo/15638345/ |
+| p/lead-neha-kapoor.webp | https://www.pexels.com/photo/16082969/ |
+| p/lead-ira-kapoor.webp | https://www.pexels.com/photo/19877825/ |
+| p/lead-zoya-khan.webp | https://www.pexels.com/photo/18529574/ |
+| p/lead-aditi-verma.webp | https://www.pexels.com/photo/28926424/ |
+| p/lead-ananya-rao.webp | https://www.pexels.com/photo/30902376/ |
+| p/lead-riya-shekhawat.webp | https://www.pexels.com/photo/37879981/ |
+| p/lead-tanvi-sharma.webp | https://www.pexels.com/photo/36870279/ |
+| p/lead-aarav-mehta.webp | https://www.pexels.com/photo/5528969/ |
+| p/lead-kabir-films.webp | https://www.pexels.com/photo/15594934/ |
+| p/lead-rohan-kulkarni.webp | https://www.pexels.com/photo/16597257/ |
+| p/lead-siddharth-nair.webp | https://www.pexels.com/photo/9727189/ |
+| p/lead-farhan-qureshi.webp | https://www.pexels.com/photo/9712807/ |
+| p/lead-dev-malhotra.webp | https://www.pexels.com/photo/15891673/ |
+| p/lead-joaquim-fernandes.webp | https://www.pexels.com/photo/14135298/ |
+| p/lead-meher-vikram.webp | https://www.pexels.com/photo/20777265/ |

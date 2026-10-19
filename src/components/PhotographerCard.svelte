@@ -11,7 +11,7 @@
 
 <article class="card stagger" style:--i={Math.min(i, 8)}>
   <a href={`#/photographers/${p.id}`} class="link" aria-label={`${p.name}, ${p.city}, from ${formatINR(p.startingPrice)}`}>
-    <div class="im"><Img id={p.heroImage} ratio={112 / 140} ty={0.36} {eager} /></div>
+    <div class="im"><Img id={p.leadImage} ratio={112 / 140} ty={0.36} {eager} /></div>
     <div class="body">
       <h3>{p.name}</h3>
       <p class="loc">{p.area}, {p.city}</p>

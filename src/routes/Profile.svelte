@@ -63,7 +63,7 @@
 {:else if p}
   <div class="page" bind:this={page} onscroll={scrolled} in:pageIn|global>
     <div class="hero">
-      <div class="himg" style:transform={`translateY(${heroShift}px) scale(1.06)`}><Img id={p.heroImage} ratio={390 / 340} ty={0.38} eager /></div>
+      <div class="himg" style:transform={`translateY(${heroShift}px) scale(1.06)`}><Img id={p.leadImage} ratio={390 / 340} ty={0.4} eager /></div>
       <div class="shade"></div>
     </div>
     <div class="nav">
@@ -74,6 +74,7 @@
     <div class="hd">
       <span class="eyebrow">{p.categories.map(label).join(' · ')} · {p.city}</span>
       <h1>{nameParts.head} <i>{nameParts.last}</i></h1>
+      <p class="led">Led by <b>{p.leadName}</b></p>
       <p class="tag">{p.tagline}</p>
       <div class="meta"><span class="st">★ {formatRating(p.rating)}</span><span>{p.reviewCount} reviews</span><span>{p.yearsExperience} yrs</span><span class="loc"><Icon name="pin" size={13} /> {p.area}</span></div>
     </div>
@@ -155,6 +156,8 @@
   h1 { font-family: var(--font-serif); font-weight: 500; font-size: var(--t-profile); line-height: 1; margin-top: 6px; letter-spacing: -0.01em; }
   h1 i { color: var(--gold-hi); }
   .tag { font-family: var(--font-serif); font-style: italic; font-size: 17px; color: var(--ink-soft); margin-top: 8px; }
+  .led { margin-top: 8px; font-size: 13px; color: var(--mute); }
+  .led b { color: var(--gold-hi); font-weight: 500; }
   .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--mute); margin-top: 10px; align-items: center; }
   .meta .st { color: var(--gold); }
   .loc { display: inline-flex; align-items: center; gap: 4px; }

@@ -35,7 +35,10 @@ export interface Photographer {
   id: string;
   name: string;
   tagline: string;
-  heroImage: string; // image id
+  heroImage: string; // image id (portfolio hero)
+  /** The person who leads the studio and the portrait that represents it on cards and the profile hero. */
+  leadName: string;
+  leadImage: string; // image id
   city: City;
   area: string;
   categories: CategoryId[];
