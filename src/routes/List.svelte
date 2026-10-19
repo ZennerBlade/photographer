@@ -65,7 +65,7 @@
   <header class="head">
     <span class="eyebrow">Photographers</span>
     <h1>{title}</h1>
-    <p class="count" aria-live="polite">{list ? plural(list.length, 'photographer') : 'Loading'}{#if filters.city} in {filters.city}{/if}</p>
+    <p class="count" aria-live="polite">{list ? plural(list.length, 'photographer') : 'Loading'}{filters.city ? ` in ${filters.city}` : ''}</p>
   </header>
 
   <div class="sticky">
@@ -81,7 +81,7 @@
     </div>
     <div class="quick" role="group" aria-label="Category">
       <button class:on={quickActive === ''} onclick={() => quickCat('')}>All</button>
-      {#each cats as c}<button class:on={quickActive === c.id} onclick={() => quickCat(c.id)}>{c.short}</button>{/each}
+      {#each cats as c}<button class:on={quickActive === c.id} onclick={() => quickCat(c.id)}>{c.short.split(' ')[0]}</button>{/each}
     </div>
   </div>
 

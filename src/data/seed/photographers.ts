@@ -4,13 +4,13 @@ import type { Photographer } from '../types';
 type P = Omit<Photographer, 'startingPrice' | 'contact'> & { n: number };
 const raw: P[] = [
   {
-    id: 'aarav-mehta', n: 1, name: 'Aarav Mehta Studio', tagline: 'Candid, cinematic wedding stories', heroImage: '38922738',
+    id: 'aarav-mehta', n: 1, name: 'Aarav Mehta Studio', tagline: 'Candid, cinematic wedding stories', heroImage: '39625024',
     city: 'Mumbai', area: 'Bandra West', categories: ['weddings'], rating: 4.9, reviewCount: 212, yearsExperience: 11, featured: true,
     about: 'Eleven years of Indian weddings, from Udaipur palaces to Mumbai courtyards. I shoot quietly from the edges, so the day stays yours and the photographs feel like memory rather than performance. Most of my couples tell me they forgot I was there.',
     signatureStyle: { title: 'Candid & cinematic', bullets: ['Golden-hour storytelling over posed line-ups', 'Rich, true-to-skin colour grading', 'A single album sequenced like a short film'], tags: ['Candid', 'Cinematic', 'Warm tones'] },
   },
   {
-    id: 'kabir-films', n: 2, name: 'Kabir & Co. Films', tagline: 'Royal Rajasthani weddings, shot like cinema', heroImage: '16632447',
+    id: 'kabir-films', n: 2, name: 'Kabir & Co. Films', tagline: 'Royal Rajasthani weddings, shot like cinema', heroImage: '32379184',
     city: 'Jaipur', area: 'C-Scheme', categories: ['weddings'], rating: 4.9, reviewCount: 167, yearsExperience: 9, featured: true,
     about: 'A two-brother team based in Jaipur, shooting palace and haveli weddings across Rajasthan. We scout every venue before the big day so light, angles and the baraat route are planned, never improvised.',
     signatureStyle: { title: 'Regal, jewel-toned frames', bullets: ['Wide palace architecture with the couple small in frame', 'Deep reds and marigold kept saturated, never washed out', 'Drone and gimbal film delivered with the stills'], tags: ['Royal', 'Editorial', 'Drone'] },
@@ -28,7 +28,7 @@ const raw: P[] = [
     signatureStyle: { title: 'Soft light, quiet brides', bullets: ['Getting-ready portraits shot by window light', 'Traditional jewellery and textiles in detail', 'Limited weddings per season to keep it personal'], tags: ['Soft', 'Bridal', 'Intimate'] },
   },
   {
-    id: 'joaquim-fernandes', n: 5, name: 'Joaquim Fernandes', tagline: 'Sun, sea and saptapadi', heroImage: '34479855',
+    id: 'joaquim-fernandes', n: 5, name: 'Joaquim Fernandes', tagline: 'Sun, sea and saptapadi', heroImage: '32107242',
     city: 'Goa', area: 'Assagao', categories: ['weddings'], rating: 4.7, reviewCount: 121, yearsExperience: 10,
     about: 'Destination weddings on Goa beaches, villas and old Portuguese churches. I travel light, shoot with natural light and keep couples relaxed with a very bad sense of humour.',
     signatureStyle: { title: 'Sunlit and unhurried', bullets: ['Golden-hour beach portraits with minimal posing', 'Relaxed, laughing candids over staged stills', 'Same-week sneak peek of ten photographs'], tags: ['Destination', 'Natural light', 'Beach'] },
@@ -52,7 +52,7 @@ const raw: P[] = [
     signatureStyle: { title: 'Moody editorial colour', bullets: ['Deep teal and rust palettes against traditional textiles', 'Directional light, cinematic crops', 'Shot list and mood board shared two days before'], tags: ['Editorial', 'Moody', 'Fashion'] },
   },
   {
-    id: 'dev-malhotra', n: 9, name: 'Dev Malhotra', tagline: 'Portfolios and portraits for people who dislike being photographed', heroImage: '4307869',
+    id: 'dev-malhotra', n: 9, name: 'Dev Malhotra', tagline: 'Portfolios and portraits for people who dislike being photographed', heroImage: '5163867',
     city: 'Goa', area: 'Panjim', categories: ['portraits'], rating: 4.7, reviewCount: 64, yearsExperience: 5,
     about: 'Actors, musicians and founders come to me for portfolio and profile shoots. We walk around Panjim or shoot on the beach at dusk, so nobody has to hold an awkward pose in a studio.',
     signatureStyle: { title: 'Easy, outdoor portraits', bullets: ['Walk-and-talk sessions, no stiff posing', 'Warm film-style colour', 'Twenty edited images within three days'], tags: ['Portfolio', 'Outdoor', 'Warm'] },
@@ -64,7 +64,7 @@ const raw: P[] = [
     signatureStyle: { title: 'Playful pastel candids', bullets: ['Eye-level shots of kids mid-laugh', 'Soft pastel grading to match the decor', 'Cake-smash and balloon portraits included'], tags: ['Kids', 'Playful', 'Pastel'] },
   },
   {
-    id: 'farhan-qureshi', n: 11, name: 'Farhan Qureshi', tagline: 'Parties and offsites, caught on the dance floor', heroImage: '32333378',
+    id: 'farhan-qureshi', n: 11, name: 'Farhan Qureshi', tagline: 'Parties and offsites, caught on the dance floor', heroImage: '29295011',
     city: 'Delhi', area: 'Hauz Khas', categories: ['birthdays', 'corporate'], rating: 4.6, reviewCount: 87, yearsExperience: 8,
     about: 'Milestone birthdays, farmhouse parties and company offsites. I use bounce flash and fast lenses so the dance floor looks the way it felt, not like a CCTV frame.',
     signatureStyle: { title: 'Energetic night-life candids', bullets: ['Flash-kissed motion and confetti', 'Group shots in under five minutes', 'Gallery link live the next morning'], tags: ['Party', 'Flash', 'Energy'] },
@@ -76,13 +76,13 @@ const raw: P[] = [
     signatureStyle: { title: 'Airy, themed storytelling', bullets: ['Custom backdrops built around your theme', 'Bright, clean light that flatters little faces', 'Printed mini-album with every full package'], tags: ['Airy', 'Themed', 'Studio'] },
   },
   {
-    id: 'aditi-verma', n: 13, name: 'Aditi Verma', tagline: 'Beach-house and villa parties in Goa', heroImage: '27175447',
+    id: 'aditi-verma', n: 13, name: 'Aditi Verma', tagline: 'Beach-house and villa parties in Goa', heroImage: '38473407',
     city: 'Goa', area: 'Candolim', categories: ['birthdays'], rating: 4.6, reviewCount: 58, yearsExperience: 5,
     about: 'Villa birthdays, bachelorette weekends and sundowner parties in North Goa. I blend in with the guests, keep the energy high and deliver a gallery before you fly home.',
     signatureStyle: { title: 'Sundowner party stories', bullets: ['Golden-hour group portraits', 'Candids of the guests, not just the host', 'Quick-turnaround highlights for the group chat'], tags: ['Villa', 'Sundowner', 'Groups'] },
   },
   {
-    id: 'rohan-kulkarni', n: 14, name: 'Rohan Kulkarni Events', tagline: 'Conferences and launches, covered end to end', heroImage: '31786681',
+    id: 'rohan-kulkarni', n: 14, name: 'Rohan Kulkarni Events', tagline: 'Conferences and launches, covered end to end', heroImage: '7591091',
     city: 'Mumbai', area: 'Powai', categories: ['corporate'], rating: 4.8, reviewCount: 156, yearsExperience: 12, featured: true,
     about: 'Twelve years covering summits, product launches and award nights for Mumbai companies. A two-person crew handles stage, audience and networking, with a same-day edit for social teams.',
     signatureStyle: { title: 'Clean, journalistic coverage', bullets: ['Speaker, audience and sponsor shots on one shot list', 'Neutral grading true to brand colours', 'Same-day highlights for LinkedIn and Instagram'], tags: ['Conference', 'Launch', 'Same-day'] },

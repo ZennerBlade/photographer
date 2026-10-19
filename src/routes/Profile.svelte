@@ -63,7 +63,7 @@
 {:else if p}
   <div class="page" bind:this={page} onscroll={scrolled} in:pageIn|global>
     <div class="hero">
-      <div class="himg" style:transform={`translateY(${heroShift}px) scale(1.06)`}><Img id={p.heroImage} ratio={390 / 340} ty={0.34} eager /></div>
+      <div class="himg" style:transform={`translateY(${heroShift}px) scale(1.06)`}><Img id={p.heroImage} ratio={390 / 340} ty={0.38} eager /></div>
       <div class="shade"></div>
     </div>
     <div class="nav">

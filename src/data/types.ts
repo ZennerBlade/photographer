@@ -10,6 +10,8 @@ export interface ImageMeta {
   /** natural size of the stored file */
   w: number;
   h: number;
+  /** union of all detected faces incl. head room, [x0,y0,x1,y1] as 0..1 fractions. Crops are shifted to keep it whole when possible. */
+  box?: [number, number, number, number];
   /** focal point (face / subject centre) as "x% y%". Applied to every crop via lib/focus.ts */
   focus: string;
   alt: string;

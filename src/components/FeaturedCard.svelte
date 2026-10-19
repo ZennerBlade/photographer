@@ -6,7 +6,7 @@
   import HeartButton from './HeartButton.svelte';
 
   let { p, i = 0 }: { p: Photographer; i?: number } = $props();
-  const cat = $derived(CATEGORIES.find((c) => c.id === p.categories[0])!.short);
+  const cat = $derived(CATEGORIES.find((c) => c.id === p.categories[0])!.short.split(' ')[0]);
 </script>
 
 <div class="fc stagger" style:--i={i + 2}>

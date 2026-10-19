@@ -31,3 +31,4 @@ desktop.ini
 # Playwright
 test-results/
 playwright-report/
+docs/screenshots/all/

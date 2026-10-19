@@ -5,7 +5,6 @@ Source page: `https://www.pexels.com/photo/<id>/`. This is a private on-device d
 
 | File | Pexels photo | Photographer | Description |
 |---|---|---|---|
-| p/38922738.webp | https://www.pexels.com/photo/38922738/ | STAR FILM  PRODUCTION | Joyful Indian Wedding Couple Embrace |
 | p/35069916.webp | https://www.pexels.com/photo/35069916/ | Ankush Chaure | Traditional Indian Wedding Couple Embracing Outdoors |
 | p/39625024.webp | https://www.pexels.com/photo/39625024/ | Akshay Patil | Traditional Indian Engagement Couple Portrait Outdoors |
 | p/32060316.webp | https://www.pexels.com/photo/32060316/ | Rina Islam | Elegant South Asian Couple in Traditional Attire |
@@ -15,13 +14,12 @@ Source page: `https://www.pexels.com/photo/<id>/`. This is a private on-device d
 | p/28411910.webp | https://www.pexels.com/photo/28411910/ | Legacy Shots by Sharan Sathya | Elegant South Asian Couple in Traditional Attire |
 | p/6544197.webp | https://www.pexels.com/photo/6544197/ | UniQue Click By Sonam Singh | Indian Couple in Traditional Clothing |
 | p/37951751.webp | https://www.pexels.com/photo/37951751/ | Bhola Chourasia | Traditional Wedding Couple Showing Henna Designs |
-| p/16632447.webp | https://www.pexels.com/photo/16632447/ | Rupinder  Korpal | Smiling Indian Bride and Groom in Traditional Costumes |
+| p/32379184.webp | https://www.pexels.com/photo/32379184/ | Fliqa India | Elegant Indian Wedding Portrait of Bride and Groom |
 | p/19613670.webp | https://www.pexels.com/photo/19613670/ | Supriyo Raii | Bride and Groom Dressed Traditional Indian Clothes |
 | p/29953887.webp | https://www.pexels.com/photo/29953887/ | EVENT PHOTO | Traditional Indian Wedding Celebration with Couple |
 | p/35474670.webp | https://www.pexels.com/photo/35474670/ | Gaurav Vishwakarma | Vibrant Indian Wedding Ceremony at Night |
 | p/36248928.webp | https://www.pexels.com/photo/36248928/ | Deepak Sharma | Elegant Indian Wedding Couple Embracing at Night |
 | p/36248939.webp | https://www.pexels.com/photo/36248939/ | Deepak Sharma | Traditional Indian Wedding Couple Portrait |
-| p/32379184.webp | https://www.pexels.com/photo/32379184/ | Fliqa India | Elegant Indian Wedding Portrait of Bride and Groom |
 | p/6304624.webp | https://www.pexels.com/photo/6304624/ | Manik Mandal | Indian Newlyweds Embracing |
 | p/32309579.webp | https://www.pexels.com/photo/32309579/ | Fliqa India | Elegant Indian Wedding Couple Portrait |
 | p/33417236.webp | https://www.pexels.com/photo/33417236/ | The Visionary Vows | Traditional Indian Wedding Mandap Decorated with Flowers |
@@ -43,11 +41,11 @@ Source page: `https://www.pexels.com/photo/<id>/`. This is a private on-device d
 | p/37615683.webp | https://www.pexels.com/photo/37615683/ | Bhola Chourasia | Indian Bride in Traditional Red Bridal Lehengha |
 | p/32310187.webp | https://www.pexels.com/photo/32310187/ | Fliqa India | Vibrant Indian Bridal Portrait at Wedding |
 | p/13802631.webp | https://www.pexels.com/photo/13802631/ | A.R Shimanto | Woman Fixing Dress of Indian Bride |
-| p/34479855.webp | https://www.pexels.com/photo/34479855/ | Rohit Piple | Traditional Indian Wedding Ceremony with Rituals |
+| p/32107242.webp | https://www.pexels.com/photo/32107242/ | Fahad Puthawala | Elegant Indian Wedding Couple Portrait |
 | p/33558676.webp | https://www.pexels.com/photo/33558676/ | Suresh Photography | Joyful South Asian Wedding Couple Outdoors |
 | p/30482897.webp | https://www.pexels.com/photo/30482897/ | Abhishek Nigam | Elegant Indian Wedding Ceremony with Bride and Groom |
 | p/27132622.webp | https://www.pexels.com/photo/27132622/ | Sabir Khan Shourov | Portrait of Traditional Indian Couple |
-| p/32107242.webp | https://www.pexels.com/photo/32107242/ | Fahad Puthawala | Elegant Indian Wedding Couple Portrait |
+| p/38218185.webp | https://www.pexels.com/photo/38218185/ | Dishant Babariya | Elegant Indian Wedding Ceremony Hand Ritual |
 | p/20738713.webp | https://www.pexels.com/photo/20738713/ | Tushar Gaikwad | Indian Bride in Traditional Clothing  |
 | p/30184716.webp | https://www.pexels.com/photo/30184716/ | Fotographiya Wedding Photography | Traditional Indian Wedding Ritual Scene |
 | p/30840226.webp | https://www.pexels.com/photo/30840226/ | Darshan Dave | Indian Wedding Ritual with Ornamental Cow |
@@ -108,7 +106,7 @@ Source page: `https://www.pexels.com/photo/<id>/`. This is a private on-device d
 | p/7580780.webp | https://www.pexels.com/photo/7580780/ | RDNE Stock project | Man in Blue Suit Jacket Sitting on Blue Sofa |
 | p/7580643.webp | https://www.pexels.com/photo/7580643/ | RDNE Stock project | Man in Gray Suit Jacket Writing on a Paper |
 | p/8104171.webp | https://www.pexels.com/photo/8104171/ | Ivan S | Pretty Girl Looking at a Cake |
-| p/10032953.webp | https://www.pexels.com/photo/10032953/ | Ron Lach | Family at Garden Party |
+| p/9627776.webp | https://www.pexels.com/photo/9627776/ | Ivan S | A Girl Holding a Cake |
 | p/39636590.webp | https://www.pexels.com/photo/39636590/ | Krishna Kids  Photography | Baby's Half-Birthday Celebration with Cake |
 | p/35875002.webp | https://www.pexels.com/photo/35875002/ | Ventara Films | Young Girl Celebrating Birthday Outdoors |
 | p/38460582.webp | https://www.pexels.com/photo/38460582/ | Krishna Kids  Photography | Young Girl's Birthday Celebration Indoors |
@@ -133,7 +131,7 @@ Source page: `https://www.pexels.com/photo/<id>/`. This is a private on-device d
 | p/35042459.webp | https://www.pexels.com/photo/35042459/ | Ernesto RƎIƎZ | Elegant Themed Event Hall Setup with Stage |
 | p/35042249.webp | https://www.pexels.com/photo/35042249/ | Ernesto RƎIƎZ | Elegant Roman Themed Event Room Setup |
 | p/33914525.webp | https://www.pexels.com/photo/33914525/ | The Visionary Vows | Elegant Ballroom Setup with Chandeliers for Event |
-| p/28819497.webp | https://www.pexels.com/photo/28819497/ | Naveed Basapur | Excited Fans Cheering for Sports Team Outdoors |
+| p/31770771.webp | https://www.pexels.com/photo/31770771/ | Fahad Puthawala | Business Presentation with Professional Setup |
 | p/7580766.webp | https://www.pexels.com/photo/7580766/ | RDNE Stock project | Man in Blue Suit Standing by the Window |
 | p/7580761.webp | https://www.pexels.com/photo/7580761/ | RDNE Stock project | Man in Blue Suit Jacket and Blue Dress Pants |
 | p/7580912.webp | https://www.pexels.com/photo/7580912/ | RDNE Stock project | Man in Blue Suit Jacket Holding a Folder with Documents |
@@ -151,7 +149,7 @@ Source page: `https://www.pexels.com/photo/<id>/`. This is a private on-device d
 | p/7580810.webp | https://www.pexels.com/photo/7580810/ | RDNE Stock project | People Surprising their Colleague |
 | p/7580814.webp | https://www.pexels.com/photo/7580814/ | RDNE Stock project | People Celebrating a Birthday |
 | p/7580803.webp | https://www.pexels.com/photo/7580803/ | RDNE Stock project | People Wearing Party Hats |
-| p/7580783.webp | https://www.pexels.com/photo/7580783/ | RDNE Stock project | People Wearing Party Hats |
 | p/18429385.webp | https://www.pexels.com/photo/18429385/ | Inna Perekitnaja | Smiling Mother Holding Daughter on Birthday |
 | p/36211802.webp | https://www.pexels.com/photo/36211802/ | Rizky Sabriansyah | Smiling Woman Celebrating Birthday Indoors |
 | p/30665228.webp | https://www.pexels.com/photo/30665228/ | Jonathan Valdes | Woman Celebrating Birthday with Balloons and Gift |
+| p/16632447.webp | https://www.pexels.com/photo/16632447/ | Rupinder  Korpal | Smiling Indian Bride and Groom in Traditional Costumes |

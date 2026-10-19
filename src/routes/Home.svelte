@@ -24,7 +24,7 @@
 
 <div class="page page-pad-bottom" in:pageIn|global>
   <header class="top">
-    <span class="brand serif">Noor<i> Atelier</i></span>
+    <span class="brand serif">Noor <i>Atelier</i></span>
     <a class="srch" href="#/photographers" aria-label="Search photographers"><Icon name="search" size={18} stroke={1.2} /></a>
   </header>
 
@@ -42,7 +42,7 @@
   <div class="cats">
     {#each cats as c, i}
       <a class="cat stagger" style:--i={i + 2} href={`#/photographers?cat=${c.id}`}>
-        <Img id={c.cover} ratio={166 / 96} ty={0.4} eager />
+        <Img id={c.cover} ratio={166 / 96} ty={0.46} eager />
         <div><b>{c.short}</b><small>{counts[c.id]} photographers</small></div>
       </a>
     {/each}

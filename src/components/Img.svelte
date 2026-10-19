@@ -18,7 +18,7 @@
   });
 </script>
 
-<span class="img" class:failed class:loaded>
+<span class="img" class:failed class:loaded class:contain>
   {#if !failed}
     <img
       bind:this={el}
@@ -38,6 +38,7 @@
 
 <style>
   .img { display: block; position: absolute; inset: 0; background: linear-gradient(135deg, #2a2119, #151110); }
+  .img.contain { background: transparent; }
   .img.failed { background: radial-gradient(circle at 50% 35%, #3a2d20, #151110 70%); }
   .img.failed::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 40%, rgba(212, 176, 106, 0.25) 0 18px, transparent 19px); }
   img { width: 100%; height: 100%; opacity: 0; transition: opacity var(--d-slow) var(--ease-out); }
