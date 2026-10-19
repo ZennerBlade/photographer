@@ -1,6 +1,6 @@
 # PRD: Photographer Discovery App (Demo)
 
-Status: Draft v1 | Scope: demo only | Platform: mobile viewport only (375-430px)
+Status: LOCKED v1.0, 2026-10-19 | Scope: demo only | Platform: mobile-app-only (375-430px), runs locally on device
 
 ## 1. Overview and Problem
 
@@ -34,7 +34,7 @@ Status: Draft v1 | Scope: demo only | Platform: mobile viewport only (375-430px)
 ## 3. MVP Scope
 
 ### 3.1 Decision: photographer profile editor
-**Recommendation: OUT of demo MVP (deferred to Phase 1).** Rationale: the demo's value is the client experience; an editor needs auth, uploads, and persistence, which contradicts "no real backend". Profiles are seeded as static data (JSON/TS module). To keep the photographer story credible, include a non-interactive "Are you a photographer? Join the directory" link on the home or profile screen that opens a simple "Coming soon" sheet (optional, Should-have).
+**Locked: OUT of demo MVP (deferred to Phase 1).** Rationale: the demo's value is the client experience; an editor needs auth, uploads, and persistence, which contradicts "no real backend". Profiles are seeded as static data (JSON/TS module). To keep the photographer story credible, include a non-interactive "Are you a photographer? Join the directory" link on the home or profile screen that opens a simple "Coming soon" sheet (optional, Should-have).
 
 ### 3.2 Categories (fixed)
 1. Weddings
@@ -51,7 +51,9 @@ Status: Draft v1 | Scope: demo only | Platform: mobile viewport only (375-430px)
 - Full-screen image viewer for portfolio photos
 - Seed/mock data: about 12-16 photographers across all 4 categories and 4-5 locations
 - Loading skeletons, empty states, image-fallback states
-- Mobile-only layout (375-430px)
+- Mobile-only layout (375-430px) using app patterns: bottom tab bar, bottom sheets, safe areas
+- Saved/shortlist (heart toggle, persisted in `localStorage`) with a Saved tab
+- INR pricing, Indian cities and names; fake contact details with a "Demo data" notice
 
 ### 3.4 OUT of scope
 - Booking, availability calendars, payments, deposits, invoices
@@ -60,8 +62,8 @@ Status: Draft v1 | Scope: demo only | Platform: mobile viewport only (375-430px)
 - Photographer profile editor / dashboard / uploads
 - Reviews submission (ratings shown are seeded read-only values)
 - Real backend, database, admin panel, real geolocation or maps
-- Desktop and tablet layouts
-- Favorites/shortlist persistence (nice-to-have, see 4.9)
+- Desktop and tablet layouts, and any phone-frame/"open on mobile" wrapper
+- Hosting, deployment, shareable links (runs locally only)
 - Push notifications, analytics, SEO, i18n, accessibility audit beyond sensible basics
 - Launch, marketing, app store, go-to-market, pricing of the product itself
 
@@ -69,7 +71,7 @@ Status: Draft v1 | Scope: demo only | Platform: mobile viewport only (375-430px)
 - **Photographer**: id, name, tagline, heroImage, city/area, categories[], rating (0-5), reviewCount, startingPrice, about, signatureStyle (short title + 2-3 bullets or a paragraph), contact {phone, whatsapp, email}, yearsExperience (optional)
 - **PortfolioImage**: id, photographerId, category, src, alt
 - **Package**: id, photographerId, name, category, price, duration, deliverables[] (what is included)
-- Currency and unit formatting centralised (see open questions).
+- Currency and unit formatting centralised (INR; see section 9, Locked decisions).
 
 ## 4. Screens, User Stories, Acceptance Criteria
 
@@ -154,17 +156,17 @@ Acceptance criteria:
 - In the demo, seeded contact details are clearly fake/safe (e.g., reserved test numbers and `example.com` emails) and a small "Demo data" notice is visible somewhere in the app.
 - Sticky bar does not cover content (page has bottom padding) and respects safe-area insets.
 
-### 4.9 Shortlist (NICE)
+### 4.9 Shortlist / Saved (MUST, locked in scope)
 **Story**: As a client, I want to save photographers so that I can compare later.
-- Heart icon on cards and profile toggles saved state, persisted in `localStorage`; a "Saved" view lists them. Cut first if time is short.
+- Heart icon on cards and profile toggles saved state, persisted in `localStorage`; the Saved tab in the bottom tab bar lists them, with an empty state.
 
 ### 4.10 Photographer teaser (SHOULD)
 **Story**: As a photographer visiting the demo, I want to see where I would join so that I understand the supply side.
 - A "Are you a photographer? Join the directory" link opens a simple "Coming soon" sheet with an email field that does nothing but show a thank-you (no data stored) or just static copy.
 
 ### 4.11 Navigation and global states (MUST)
-- Single-column mobile app shell with a header and back navigation; optional bottom tab bar (Home, Photographers, Saved if built).
-- Deep-linkable routes (`/`, `/photographers`, `/photographers/:id`) so a profile can be opened directly during a demo.
+- Single-column mobile app shell with a header and back navigation, and a bottom tab bar (Home, Photographers, Saved) respecting safe areas.
+- Deep-linkable routes (`/`, `/photographers`, `/photographers/:id`, via hash router) so a profile can be opened directly during a demo.
 - Browser back button works as expected.
 - A 404/not-found fallback returns to Home.
 
@@ -172,7 +174,7 @@ Acceptance criteria:
 
 The demo is convincing when:
 1. **Complete journey in under 60 seconds**: Home -> pick category -> filter by price/city -> open profile -> tap WhatsApp, with no dead ends.
-2. **Content feels real**: 12-16 photographers with high-quality images (licensed or placeholder-photo services for demo; see open questions), distinct names, cities, bios, signature styles and credible package prices.
+2. **Content feels real**: 12-16 photographers with high-quality images (best-looking real photography; see section 9 decision 3 and the release blocker), distinct names, cities, bios, signature styles and credible package prices.
 3. **Every category is well stocked**: at least 3 photographers per category, and at least 2 photographers serve more than one category (to show gallery tabs).
 4. **Filters visibly work**: every filter and sort changes the results; no combination crashes, and empty states are handled.
 5. **Looks native on a phone**: renders cleanly at 375, 390 and 430px widths; no horizontal scroll, no overlapping elements, tap targets of 44px or more.
@@ -183,12 +185,13 @@ The demo is convincing when:
 
 ## 6. Technical Considerations (light, for engineering handoff)
 
-- **Framework**: not chosen. Repo is a bare Vite scaffold. Recommendation: React + TypeScript + React Router on Vite (fits the web-architecture skill and the three routes above); plain CSS modules or Tailwind for styling. Final choice is an open question.
+- **Framework (locked direction)**: lightweight, not React. Svelte 5 + TypeScript on Vite, Bun as package manager/runtime, svelte-spa-router or a simple hash router. Motion via Svelte built-in transitions + `motion`; headless primitives (bits-ui / shadcn-svelte style) as needed. Vite+ considered, can swap later. Final stack confirmed in the tech-stack phase.
 - **Data**: static `seed` module exporting photographers, portfolio images and packages; thin data-access layer (`getPhotographers(filters)`) so a real API can replace it later.
 - **State**: URL search params for filters/sort (shareable, survives refresh) or a small store; no server state library needed.
-- **Mobile-only**: constrain the app to a max-width container (about 430px) centered on wider screens, or show a "best viewed on mobile" frame. No responsive desktop layouts.
-- **Images**: use consistent aspect ratios, `loading="lazy"`, width/height attributes; source must be licensed for demo use.
-- **Risks**: image licensing/quality; filter state with deep links; sticky bar vs. browser chrome/safe areas; deep links needing SPA fallback in the host.
+- **Mobile-only**: treat as a mobile app rendered on the web. No laptop/desktop layout and no phone frame; design for 375-430px with app patterns (bottom tab bar, sheets, safe areas).
+- **Images**: use consistent aspect ratios, `loading="lazy"`, width/height attributes; real photography (free stock such as Unsplash/Pexels first; other web images acceptable for the private on-device demo; AI-generated only as last resort). RELEASE BLOCKER: all images must be replaced with licensed/owned ones before any public release.
+- **Hosting**: none. Runs locally (dev server / local preview), opened on a phone over LAN. No deploy, no shareable link; private repo.
+- **Risks**: image quality; filter state with deep links; sticky bar vs. browser chrome/safe areas; image licensing before any public release (blocker).
 
 ## 7. Phased Roadmap (post-demo, directional only)
 
@@ -218,15 +221,15 @@ Not researched live; confirm before relying on any claim.
 
 **Differentiation for this product**: occasion-first browsing across four categories; a dedicated "signature style" section so clients choose by taste, not just price; transparent packages with inclusions; one-tap direct contact with zero platform friction. Trade-off: no booking protection or reviews in the demo.
 
-## 9. Open Questions for the User
+## 9. Locked decisions (2026-10-19)
 
-1. **Framework**: confirm React + TypeScript + React Router on Vite, or a different choice (Vue, Svelte, etc.)?
-2. **Region and currency**: which country/currency and cities should the seed data use (e.g., India with INR and Mumbai/Delhi/Bengaluru)? This also affects names, price levels, and WhatsApp/phone formats.
-3. **Image sourcing**: use free stock (e.g., Unsplash), AI-generated, or your own photos for the demo? Licensing and attribution affect what we can show publicly.
-4. **Desktop behaviour**: on a wide screen, should the app show a centered phone-width frame, or a "open on mobile" message?
-5. **Photographer editor**: do you agree with deferring it (recommended), or do you want a read-only "photographer view" mock screen in the demo?
-6. **Shortlist/Saved**: include the NICE-TO-HAVE shortlist, or keep it out to stay tight?
-7. **Price filter basis**: filter on "starting price" (simple) or on any package price within the chosen category (more accurate, more logic)?
-8. **Demo contact details**: use fake safe numbers/emails, or should the demo link to real accounts for a live showcase?
-9. **Branding**: product name, logo and colour direction, or should the design skill propose them?
-10. **Hosting the demo**: just local dev, or a deployed static URL for sharing (affects SPA routing fallback)?
+1. **Framework**: lightweight, not React. Svelte 5 + TypeScript on Vite, Bun, svelte-spa-router or hash router; Svelte transitions + `motion`; bits-ui/shadcn-svelte style headless primitives. Vite+ considered, swappable. Final stack confirmed in tech-stack phase.
+2. **Region**: India, INR, Indian cities, Indian names.
+3. **Images**: best-looking real photography (free stock e.g. Unsplash/Pexels; other web images acceptable for the private on-device demo). AI-generated only as last resort. **RELEASE BLOCKER**: replace all images before any public release.
+4. **Mobile-app-only**: a mobile app rendered on the web. No desktop layout, no phone frame; 375-430px; bottom tab bar, sheets, safe areas.
+5. **Photographer profile editor**: OUT of demo (Phase 1); profiles are seed data.
+6. **Shortlist/Saved**: IN scope, persisted in `localStorage`, with a Saved tab.
+7. **Filters/sort**: IN scope; price filter on starting price.
+8. **Contact details**: fake numbers/emails with a "Demo data" notice.
+9. **Name/branding**: design agent proposes several directions; user picks (pending).
+10. **Hosting**: none. Local only (dev server / local preview, phone over LAN). No deploy, no shareable link. Private repo.
