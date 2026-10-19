@@ -1,9 +1,10 @@
+import { BRAND_NAME } from './brand';
 import type { Package, Photographer } from '../data/types';
 
 const digits = (s: string) => s.replace(/\D/g, '');
 
 function message(p: Photographer, pkg?: Package): string {
-  const base = `Hi ${p.name}, I found you on Noor Atelier and would like to enquire about your photography services.`;
+  const base = `Hi ${p.name}, I found you on ${BRAND_NAME} and would like to enquire about your photography services.`;
   return pkg ? `${base} I am interested in the ${pkg.name} package.` : base;
 }
 
