@@ -46,7 +46,7 @@
 
 <style>
   .root { position: fixed; inset: 0; z-index: var(--z-sheet); }
-  .backdrop { position: absolute; inset: 0; width: 100%; background: rgba(5, 4, 3, 0.62); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+  .backdrop { position: absolute; inset: 0; width: 100%; background: rgba(5, 4, 3, 0.62); backdrop-filter: blur(3px); }
   .panel { position: absolute; left: 0; right: 0; bottom: 0; max-height: 86%; display: flex; flex-direction: column; background: #14100d; border: 1px solid var(--line); border-bottom: 0; border-radius: 28px 28px 0 0; outline: none; transition: transform var(--d-base) var(--ease-out); }
   .grab { padding: 10px 0 2px; display: grid; place-items: center; touch-action: none; cursor: grab; }
   .grab i { width: 38px; height: 4px; border-radius: 4px; background: var(--line-strong); }

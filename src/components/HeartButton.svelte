@@ -21,7 +21,7 @@
 
 <style>
   .heart { width: var(--tap); height: var(--tap); border-radius: 50%; display: grid; place-items: center; color: var(--ink); }
-  .glass { background: rgba(13, 11, 9, 0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--line); }
+  .glass { background: rgba(13, 11, 9, 0.5); backdrop-filter: blur(12px); border: 1px solid var(--line); }
   .on { color: var(--gold-hi); }
   .on :global(svg) { filter: drop-shadow(0 0 6px rgba(212, 176, 106, 0.5)); }
 </style>
