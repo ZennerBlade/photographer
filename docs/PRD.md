@@ -62,7 +62,7 @@ Status: LOCKED v1.0, 2026-10-19 | Scope: demo only | Platform: mobile-app-only (
 - Photographer profile editor / dashboard / uploads
 - Reviews submission (ratings shown are seeded read-only values)
 - Real backend, database, admin panel, real geolocation or maps
-- Desktop and tablet layouts, and any phone-frame/"open on mobile" wrapper
+- Desktop and tablet layouts (wide screens only get a cosmetic phone frame around the same mobile layout)
 - Hosting, deployment, shareable links (runs locally only)
 - Push notifications, analytics, SEO, i18n, accessibility audit beyond sensible basics
 - Launch, marketing, app store, go-to-market, pricing of the product itself
@@ -188,7 +188,7 @@ The demo is convincing when:
 - **Framework (locked direction)**: lightweight, not React. Svelte 5 + TypeScript on Vite, Bun as package manager/runtime, svelte-spa-router or a simple hash router. Motion via Svelte built-in transitions + `motion`; headless primitives (bits-ui / shadcn-svelte style) as needed. Vite+ considered, can swap later. Final stack confirmed in the tech-stack phase.
 - **Data**: static `seed` module exporting photographers, portfolio images and packages; thin data-access layer (`getPhotographers(filters)`) so a real API can replace it later.
 - **State**: URL search params for filters/sort (shareable, survives refresh) or a small store; no server state library needed.
-- **Mobile-only**: treat as a mobile app rendered on the web. No laptop/desktop layout and no phone frame; design for 375-430px with app patterns (bottom tab bar, sheets, safe areas).
+- **Mobile-only**: treat as a mobile app rendered on the web. No laptop/desktop layout; on wide screens the same mobile layout is shown centred in a cosmetic phone frame (CSS only); design for 375-430px with app patterns (bottom tab bar, sheets, safe areas).
 - **Images**: use consistent aspect ratios, `loading="lazy"`, width/height attributes; real photography (free stock such as Unsplash/Pexels first; other web images acceptable for the private on-device demo; AI-generated only as last resort). RELEASE BLOCKER: all images must be replaced with licensed/owned ones before any public release.
 - **Hosting**: none. Runs locally (dev server / local preview), opened on a phone over LAN. No deploy, no shareable link; private repo.
 - **Risks**: image quality; filter state with deep links; sticky bar vs. browser chrome/safe areas; image licensing before any public release (blocker).
@@ -226,7 +226,7 @@ Not researched live; confirm before relying on any claim.
 1. **Framework**: lightweight, not React. Svelte 5 + TypeScript on Vite, Bun, svelte-spa-router or hash router; Svelte transitions + `motion`; bits-ui/shadcn-svelte style headless primitives. Vite+ considered, swappable. Final stack confirmed in tech-stack phase.
 2. **Region**: India, INR, Indian cities, Indian names.
 3. **Images**: best-looking real photography (free stock e.g. Unsplash/Pexels; other web images acceptable for the private on-device demo). AI-generated only as last resort. **RELEASE BLOCKER**: replace all images before any public release.
-4. **Mobile-app-only**: a mobile app rendered on the web. No desktop layout, no phone frame; 375-430px; bottom tab bar, sheets, safe areas.
+4. **Mobile-app-only**: a mobile app rendered on the web. No desktop layout; cosmetic phone frame on wide screens (CSS only); 375-430px; bottom tab bar, sheets, safe areas.
 5. **Photographer profile editor**: OUT of demo (Phase 1); profiles are seed data.
 6. **Shortlist/Saved**: IN scope, persisted in `localStorage`, with a Saved tab.
 7. **Filters/sort**: IN scope; price filter on starting price.

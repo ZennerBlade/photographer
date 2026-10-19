@@ -16,7 +16,7 @@ Phase 1 PRD locked (v1.0, 2026-10-19). Next: tech-stack phase (confirm stack).
 1. Svelte 5 + TS on Vite, Bun, hash/svelte-spa-router, `motion`, headless primitives (confirm in tech-stack phase)
 2. India, INR, Indian cities/names
 3. Real photography (free stock first); AI images last resort
-4. Mobile-app-only, 375-430px, no desktop layout/phone frame
+4. Mobile-app-only, 375-430px, no desktop layout; CSS phone frame on wide screens
 5. Photographer editor out (Phase 1)
 6. Saved/shortlist in scope (localStorage, Saved tab)
 7. Filters/sort in scope; price filter on starting price
