@@ -8,7 +8,7 @@
   import FeaturedCard from '../components/FeaturedCard.svelte';
   import DemoNotice from '../components/DemoNotice.svelte';
   import JoinSheet from '../components/JoinSheet.svelte';
-  import { BRAND } from '../lib/brand';
+  import Logo from '../components/Logo.svelte';
 
   const cats = getCategories();
   const counts = countByCategory();
@@ -25,7 +25,7 @@
 
 <div class="page page-pad-bottom" in:pageIn|global>
   <header class="top">
-    <span class="brand serif">{BRAND.first} <i>{BRAND.last}</i></span>
+    <Logo />
     <a class="srch" href="#/photographers" aria-label="Search photographers"><Icon name="search" size={18} stroke={1.2} /></a>
   </header>
 
@@ -69,8 +69,6 @@
 
 <style>
   .top { padding: calc(var(--safe-top) + 14px) var(--gutter) 8px; display: flex; justify-content: space-between; align-items: center; min-height: 66px; }
-  .brand { font-size: 25px; font-weight: 500; letter-spacing: 0.02em; }
-  .brand i { color: var(--gold); }
   .srch { width: var(--tap); height: var(--tap); display: grid; place-items: center; color: var(--gold); margin-right: -10px; }
   .intro { padding: var(--s-4) var(--gutter) 0; }
   h1 { font-family: var(--font-serif); font-weight: 500; font-size: var(--t-h1); line-height: 1.02; margin-top: var(--s-3); letter-spacing: -0.012em; }
@@ -90,7 +88,7 @@
   .fl { display: flex; gap: 14px; padding: 0 var(--gutter) 4px; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-left: var(--gutter); scrollbar-width: none; }
   .fl::-webkit-scrollbar { display: none; }
   .skw { flex: 0 0 190px; }
-  .sk { width: 100%; flex: 0 0 190px; height: 262px; border-radius: var(--r-arch) var(--r-arch) 16px 16px; }
+  .sk { width: 100%; flex: 0 0 190px; height: 262px; border-radius: 6px; }
   .all { margin: var(--s-8) var(--gutter) 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
   .all .btn { width: 100%; }
   .join { font-size: var(--t-xs); color: var(--mute); min-height: var(--tap); }

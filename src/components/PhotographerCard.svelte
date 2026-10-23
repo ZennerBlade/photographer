@@ -26,11 +26,11 @@
 </article>
 
 <style>
-  .card { position: relative; margin: 0 var(--gutter) var(--s-4); border: 1px solid var(--line); border-radius: var(--r-xl); background: linear-gradient(180deg, var(--surf-2), var(--surf)); box-shadow: var(--shadow-card); }
+  .card { position: relative; margin: 0 var(--gutter) var(--s-4); border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(180deg, var(--surf-2), var(--surf)); box-shadow: var(--shadow-card); }
   .link { display: flex; gap: var(--s-4); padding: var(--s-3); min-height: 168px; border-radius: inherit; }
-  .im { position: relative; flex: 0 0 112px; aspect-ratio: 112 / 140; border-radius: 56px 56px 14px 14px; overflow: hidden; align-self: center; }
+  .im { position: relative; flex: 0 0 106px; aspect-ratio: 112 / 140; border-radius: 2px; overflow: hidden; align-self: center; outline: 1px solid var(--line-strong); outline-offset: 3px; margin: 3px; }
   .body { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: var(--s-2) var(--s-8) var(--s-1) 0; }
-  h3 { font-family: var(--font-serif); font-weight: 500; font-size: 22px; line-height: 1.08; letter-spacing: -0.005em; }
+  h3 { text-wrap: balance; overflow-wrap: break-word; font-family: var(--font-serif); font-weight: 500; font-size: 22px; line-height: 1.08; letter-spacing: -0.005em; }
   .loc { color: var(--mute); font-size: var(--t-xs); margin-top: var(--s-1); }
   .chips { display: flex; flex-wrap: wrap; gap: var(--s-2) 6px; margin-top: var(--s-3); }
   .chips li { font-size: 11px; letter-spacing: 0.04em; color: var(--gold-hi); border: 1px solid var(--line-strong); padding: 3px 10px; border-radius: var(--r-pill); }

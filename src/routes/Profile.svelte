@@ -153,7 +153,7 @@
   .nav { position: absolute; top: calc(var(--safe-top) + 10px); left: 14px; right: 14px; display: flex; justify-content: space-between; z-index: 3; }
   .round { width: var(--tap); height: var(--tap); border-radius: 50%; background: rgba(13, 11, 9, 0.5); backdrop-filter: blur(12px); display: grid; place-items: center; border: 1px solid var(--line); }
   .hd { position: relative; z-index: 3; margin-top: -92px; padding: 0 var(--gutter); }
-  h1 { font-family: var(--font-serif); font-weight: 500; font-size: var(--t-profile); line-height: 1; margin-top: var(--s-2); letter-spacing: -0.012em; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55); }
+  h1 { font-family: var(--font-serif); font-weight: 500; font-size: var(--t-profile); line-height: 1.04; margin-top: var(--s-2); letter-spacing: -0.012em; text-wrap: balance; overflow-wrap: break-word; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55); }
   h1 i { color: var(--gold-hi); }
   .tag { font-family: var(--font-serif); font-style: italic; font-size: 19px; line-height: 1.25; color: var(--ink-soft); margin-top: var(--s-2); }
   .led { margin-top: var(--s-3); font-size: var(--t-sm); color: var(--mute); }

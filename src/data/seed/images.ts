@@ -9,7 +9,7 @@ export const IMAGES: Record<string, ImageMeta> = {
   "7227990": { src: "img/p/7227990.webp", w: 1100, h: 1650, box: [0.305, 0.111, 0.632, 0.47], focus: "47% 33%", alt: "Professional photograph" },
   "8104171": { src: "img/p/8104171.webp", w: 1100, h: 1649, box: [0.372, 0.361, 0.618, 0.63], focus: "49% 52%", alt: "Professional photograph" },
   "8348468": { src: "img/p/8348468.webp", w: 1100, h: 733, box: [0.306, 0, 0.826, 0.514], focus: "57% 29%", alt: "Professional photograph" },
-  "8542196": { src: "img/p/8542196.webp", w: 1100, h: 1650, box: [0.246, 0.109, 0.588, 0.544], focus: "42% 37%", alt: "Professional photograph" },
+  "8542196": { src: "img/p/8542196.webp", w: 1100, h: 1650, box: [0.246, 0.085, 0.588, 0.468], focus: "42% 37%", alt: "Professional photograph" },
   "8556182": { src: "img/p/8556182.webp", w: 1100, h: 1583, box: [0.2, 0.1, 0.8, 0.75], focus: "50% 40%", alt: "Professional photograph" },
   "8683443": { src: "img/p/8683443.webp", w: 1100, h: 1650, box: [0.25, 0.1, 0.75, 0.5], focus: "50% 28%", alt: "Professional photograph" },
   "9275222": { src: "img/p/9275222.webp", w: 1100, h: 733, box: [0.394, 0.596, 0.43, 0.715], focus: "41% 67%", alt: "Professional photograph" },

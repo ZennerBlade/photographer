@@ -1,4 +1,4 @@
-/* Noor Atelier design tokens (Direction A). Documented in docs/DESIGN.md. Change brand values here only. */
+/* Aperta design tokens (Direction A). Documented in docs/DESIGN.md. Change brand values here only. */
 :root {
   /* colour */
   --bg: #0d0b09;
@@ -51,7 +51,6 @@
   --r-lg: 18px;
   --r-xl: 20px;
   --r-pill: 999px;
-  --r-arch: 95px;
 
   /* motion */
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
