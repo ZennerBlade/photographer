@@ -32,3 +32,4 @@ desktop.ini
 test-results/
 playwright-report/
 docs/screenshots/all/
+.claude/worktrees/
