@@ -10,7 +10,10 @@ import './styles/tokens.css';
 import './styles/base.css';
 import { mount } from 'svelte';
 import App from './App.svelte';
+import { ready } from './data/api';
 
+/** Wait (briefly) for locally stored photographer profiles so the first render already includes them. */
+await Promise.race([ready, new Promise((r) => setTimeout(r, 1500))]);
 export default mount(App, { target: document.getElementById('app')! });
 
 if ('serviceWorker' in navigator && import.meta.env.PROD) {

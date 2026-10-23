@@ -39,7 +39,7 @@ export interface Photographer {
   /** The person who leads the studio and the portrait that represents it on cards and the profile hero. */
   leadName: string;
   leadImage: string; // image id
-  city: City;
+  city: City | (string & {});
   area: string;
   categories: CategoryId[];
   rating: number;
@@ -50,6 +50,10 @@ export interface Photographer {
   contact: Contact;
   yearsExperience: number;
   featured?: boolean;
+  /** Created through the onboarding flow (demo, stored in this browser). */
+  mine?: boolean;
+  /** Shows the "New" badge. */
+  isNew?: boolean;
 }
 
 export interface PortfolioImage {
