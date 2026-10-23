@@ -31,7 +31,7 @@
   .link { display: flex; gap: var(--s-4); padding: var(--s-3); min-height: 168px; border-radius: inherit; }
   .im { position: relative; flex: 0 0 106px; aspect-ratio: 112 / 140; border-radius: 2px; overflow: hidden; align-self: center; outline: 1px solid var(--line-strong); outline-offset: 3px; margin: 3px; }
   .body { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: var(--s-2) var(--s-8) var(--s-1) 0; }
-  h3 { text-wrap: balance; overflow-wrap: break-word; font-family: var(--font-serif); font-weight: 500; font-size: 22px; line-height: 1.08; letter-spacing: -0.005em; }
+  h3 { display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: calc(2 * 1.08 * 22px); text-wrap: balance; overflow-wrap: break-word; font-family: var(--font-serif); font-weight: 500; font-size: 22px; line-height: 1.08; letter-spacing: -0.005em; }
   .loc { color: var(--mute); font-size: var(--t-xs); margin-top: var(--s-1); }
   .chips { display: flex; flex-wrap: wrap; gap: var(--s-2) 6px; margin-top: var(--s-3); }
   .chips li { font-size: 11px; letter-spacing: 0.04em; color: var(--gold-hi); border: 1px solid var(--line-strong); padding: 3px 10px; border-radius: var(--r-pill); }

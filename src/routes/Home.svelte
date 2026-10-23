@@ -39,7 +39,7 @@
     <input type="search" bind:value={q} placeholder="Search city, style or photographer" aria-label="Search city, style or photographer" enterkeyhint="search" />
   </form>
 
-  <div class="sec"><h2>Occasions</h2><a href="#/photographers">All</a></div>
+  <div class="sec"><h2>Occasions</h2><a href="#/photographers">See all</a></div>
   <div class="cats">
     {#each cats as c, i}
       <a class="cat stagger press" style:--i={i + 2} href={`#/photographers?cat=${c.id}`}>
@@ -49,7 +49,7 @@
     {/each}
   </div>
 
-  <div class="sec"><h2>Featured this season</h2><a href="#/photographers?sort=rating">View all</a></div>
+  <div class="sec"><h2>Featured this season</h2><a href="#/photographers?sort=rating">See all</a></div>
   <div class="fl" role="list">
     {#if featured}
       {#each featured as p, i (p.id)}<FeaturedCard {p} {i} />{/each}
@@ -79,9 +79,9 @@
   input::placeholder { color: var(--mute); opacity: 1; }
   .cats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); padding: 0 var(--gutter); }
   .cat { position: relative; border-radius: var(--r-lg); overflow: hidden; height: 112px; background: #2a2119; box-shadow: var(--shadow-card), inset 0 0 0 1px var(--line); }
-  .cat :global(.img) { filter: saturate(1.05) brightness(1.02); transition: transform var(--d-slow) var(--ease-out); }
+  .cat :global(.img) { filter: saturate(0.72) sepia(0.22) contrast(1.06) brightness(0.96); transition: transform var(--d-slow) var(--ease-out); }
   .cat:active :global(.img) { transform: scale(1.04); }
-  .cat::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8, 6, 4, 0.06) 20%, rgba(8, 6, 4, 0.9)); }
+  .cat::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26, 17, 10, 0.12) 15%, rgba(12, 8, 5, 0.9)), rgba(120, 78, 30, 0.12); mix-blend-mode: normal; }
   .cat div { position: absolute; z-index: 2; left: var(--s-3); bottom: var(--s-3); right: var(--s-2); }
   .cat b { font-family: var(--font-serif); font-size: 19px; font-weight: 500; line-height: 1.05; display: block; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); }
   .cat small { display: block; font-size: 11px; color: var(--gold-hi); margin-top: var(--s-1); letter-spacing: 0.06em; }
