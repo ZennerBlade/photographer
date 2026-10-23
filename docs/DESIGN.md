@@ -1,8 +1,10 @@
-# Design: Noor Atelier (Direction A)
+# Design: Aperta (dark Noor theme, Direction A)
 
 Source of truth: `docs/design/directions/direction-a.html` (approved). Every value below lives in `src/styles/tokens.css` as a CSS custom property; change brand values there only. Screenshots of the built app: `docs/screenshots/`.
 
-Tagline: "Weddings and portraits, told in low light." Mood: editorial luxury, dark espresso, antique gold, arch-cropped portraits, film grain.
+Name: **Aperta** (locked 2026-10-23). Tagline: "Every occasion, wide open." Mood: editorial luxury, dark espresso, antique gold, film grain. Mark: Aperta's six-blade aperture, recoloured gold (`src/components/Logo.svelte`, inline SVG; PWA icons in `public/icons/` rendered from it).
+
+Locked 2026-10-23: arch / rounded-doorway image shapes are REMOVED everywhere. Photographer cards use the Keepsake "mounted print" pattern in dark colours: dark surface card (6px radius), image in a 2px-radius frame with a gold hairline inset mount (outline offset 3px), then name, city + rating, category + "from ₹". Featured cards tilt +-0.8deg (alternating); list cards are the horizontal variant, untilted. Names wrap to 2 lines (`text-wrap: balance`, never truncated mid-word); card height grows. Profile keeps the Noor layout: name below the portrait, full width, wrapping. Profile about section unchanged.
 
 ## Colour
 | Token | Value | Use |
@@ -38,7 +40,7 @@ Prices: Cormorant, gold-hi, 18-24px, `formatINR` (Indian grouping, e.g. `₹1,20
 
 ## Spacing, radii, sizing
 - 4px base scale `--s-1..--s-8`; page gutter `--gutter: 24px`; min tap target `--tap: 44px`.
-- Radii: `--r-sm 12`, `--r-md 16` (grid tiles), `--r-lg 18` (category tiles, packages), `--r-xl 20` (cards, signature), `--r-pill 999` (buttons, chips, search, bars), `--r-arch 95px` (featured arch crop: 95/95/16/16; list thumbs use 56/56/14/14).
+- Radii: `--r-sm 12`, `--r-md 16` (grid tiles), `--r-lg 18` (category tiles, packages), `--r-xl 20` (cards, signature), `--r-pill 999` (buttons, chips, search, bars); photographer cards and thumbs use 6px / 2px (no arch).
 - Floating bars sit 16px from edges; tab bar 64px tall; contact bar buttons 46px.
 
 ## Motion
@@ -51,7 +53,7 @@ Prices: Cormorant, gold-hi, 18-24px, `formatINR` (Indian grouping, e.g. `₹1,20
 Implemented: page enter (fade + 14px rise, Svelte transition), staggered cards (`.stagger`, 70ms steps), bottom sheet slide-up with draggable handle, viewer fade, image fade-in on load, profile hero parallax, `motion` spring pop on the save heart, gold shimmer on the WhatsApp button, package-select pulse on the contact bar. `prefers-reduced-motion: reduce` disables all of it (CSS and the JS helpers in `src/lib/motion.ts`).
 
 ## Image framing (user requirement: no chopped heads or eyes)
-Every photo has `focus` (face centre, `"x% y%"`) and, when faces were detected, `box` (union of faces with head room) in `src/data/seed/images.ts`. All crops render through `Img.svelte` + `lib/focus.ts`, which computes the exact `object-position` for the container aspect ratio and shifts the window to keep `box` whole when possible. Crop contexts and aspect ratios: category tile 166:96, featured arch 1:1, list thumb 112:140 (arch), profile hero ~390:340, portfolio grid 4:5. Hero and cover images were chosen so their face box fits those windows; the viewer uses `object-fit: contain` (no crop).
+Every photo has `focus` (face centre, `"x% y%"`) and, when faces were detected, `box` (union of faces with head room) in `src/data/seed/images.ts`. All crops render through `Img.svelte` + `lib/focus.ts`, which computes the exact `object-position` for the container aspect ratio and shifts the window to keep `box` whole when possible. Crop contexts and aspect ratios: category tile 166:96, featured mount 1:1-ish (168px tall), list thumb 106:140, profile hero ~390:340, portfolio grid 4:5. Hero and cover images were chosen so their face box fits those windows; the viewer uses `object-fit: contain` (no crop).
 
 ## Layout
 - Single column, 375-430px. Tab bar: Home, Photographers, Saved (floating glass pill, hidden on profile where the contact bar sits in the same slot).

@@ -1,4 +1,4 @@
-# Go-to-Market: Noor Atelier
+# Go-to-Market: Aperta
 
 Status: DRAFT v1, 2026-10-19 | Author: sales-agent | Scope: solves the two-sided cold start for a directory-only product (contact via Call/WhatsApp/Email, no booking or payments).
 
@@ -9,7 +9,7 @@ Note: PRD section 3.4 puts launch and GTM out of the demo scope. This doc is dir
 - Solo founder or 2-3 person team, near-zero budget (under Rs 50k/month), founder can do outreach personally.
 - Phase 1 (supply: auth, profile editor, uploads, backend, hosting) ships before launch. The demo alone cannot onboard anyone.
 - Founder has no pre-existing photographer network; has a base in or access to one metro.
-- Revenue is not a goal for the first 6 months. Goal is proof of value: "Noor Atelier sent me real enquiries".
+- Revenue is not a goal for the first 6 months. Goal is proof of value: "Aperta sent me real enquiries".
 - Directory-only stays until enquiry volume justifies more (PRD Phases 3-5).
 
 ## 1. Which side first, and the wedge
@@ -77,10 +77,10 @@ We do not out-spend the portals. We win by being faster, visual, price-transpare
 ### Outreach scripts
 
 **Instagram DM (first touch, under 60 words):**
-> Hi {name}! Love your {specific shot/event} from {venue}. I'm building Noor Atelier, a directory where couples in {city} browse wedding photographers by style and budget and message them straight on WhatsApp. We're listing {city}'s best for free, and I'll build your profile myself (photos, packages, bio). Want a preview of how yours would look?
+> Hi {name}! Love your {specific shot/event} from {venue}. I'm building Aperta, a directory where couples in {city} browse wedding photographers by style and budget and message them straight on WhatsApp. We're listing {city}'s best for free, and I'll build your profile myself (photos, packages, bio). Want a preview of how yours would look?
 
 **WhatsApp (after they reply or from their business number):**
-> Hi {name}, this is {founder} from Noor Atelier. Thanks for replying. Here's a draft profile I made from your Instagram: {link}. If you like it, just send me your package prices and 12 favourite photos and I'll go live within a day. It's free for founding photographers and you keep all enquiries. Shall I proceed?
+> Hi {name}, this is {founder} from Aperta. Thanks for replying. Here's a draft profile I made from your Instagram: {link}. If you like it, just send me your package prices and 12 favourite photos and I'll go live within a day. It's free for founding photographers and you keep all enquiries. Shall I proceed?
 
 **Follow-up (day 3, once only):**
 > Hi {name}, quick nudge. A few couples have already been browsing {city} wedding photographers. Happy to add you with whatever you have right now, you can fix details later.
@@ -121,10 +121,10 @@ Never build client demand before there are 15+ strong profiles in the city.
 ### Channels (budget-light, ranked)
 
 1. **Planner / decorator / venue referral partners (best ROI).** They are asked "who's a good photographer?" daily. Give them a co-branded shortlist link ("{planner}'s recommended photographers"), a QR card at venues, and free listing. Offer 10 minutes of setup. Target 10 partners by day 60.
-2. **Photographers' own audiences.** Every profile has a share kit: a "Book me on Noor Atelier" story template, WhatsApp status image, and bio link. Each photographer's followers are warm local couples.
+2. **Photographers' own audiences.** Every profile has a share kit: a "Book me on Aperta" story template, WhatsApp status image, and bio link. Each photographer's followers are warm local couples.
 3. **SEO pages** for "best wedding photographer in Jaipur", "wedding photographer in Jaipur under 1 lakh", by city x category x budget. Server-rendered or pre-rendered, unique copy, structured data. Compounds slowly (3-6 months **(unverified)**), cheap, and exactly how clients search. Note: the demo SPA with hash routing and no hosting is not SEO-friendly; Phase 1 needs real URLs and pre-rendering.
 4. **Instagram/Reels:** "A wedding photographer under Rs 80k in Jaipur: 5 portfolios" style shortlist Reels, "Real packages explained" and "What a Rs 1.2 lakh wedding photographer actually delivers". Photographer collabs double reach. 3 Reels/week, founder-made.
-5. **Google Business Profile** for Noor Atelier plus local Maps presence; low effort, helps branded search.
+5. **Google Business Profile** for Aperta plus local Maps presence; low effort, helps branded search.
 6. **Couple stories / micro-influencers:** 5-10 newly-engaged local couples (Instagram 3k-30k followers) get a free "shortlist" and post their pick. Barter, not cash.
 7. **WhatsApp communities / Facebook groups** for brides-to-be and city communities: contribute helpful answers (budget guides) rather than ads.
 8. **Corporate (Phase 2):** HR/admin and event agencies via LinkedIn and agency partnerships; start only after wedding wedge works.

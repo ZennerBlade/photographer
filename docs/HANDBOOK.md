@@ -4,7 +4,7 @@
 Mobile-app-style directory (web, local-only) where clients in India find and contact photographers by occasion: Weddings, Corporate events, Birthdays/parties, Portraits/fashion. Browse, filter/sort, view profile (style, portfolio, packages), save, then Call/WhatsApp/Email. Demo only, no backend.
 
 ## Status
-PRD locked (v1.0). Stack locked. Direction A (Noor Atelier) approved. Working prototype built (all MVP screens, 16 photographers, local images). Next: user review on a real phone, then polish.
+PRD locked (v1.0). Stack locked. Direction A dark theme approved; product renamed Aperta (2026-10-23). Working prototype built (all MVP screens, 16 photographers, local images). Next: user review on a real phone, then polish.
 
 ## Repo map
 - `docs/PRD.md` - locked PRD (source of truth); `docs/TECH_STACK.md` - locked stack
@@ -50,6 +50,13 @@ Bun is at `/root/.bun/bin/bun` (add to PATH: `export PATH=$PATH:/root/.bun/bin`)
 
 ### Image pipeline (one-off, already run)
 Photos came from Pexels (public search API, 2,300 candidates reviewed as contact sheets), resized to <=1100x1400 WebP q74. Faces were detected with YuNet (OpenCV) to produce `focus` and `box` per image in `src/data/seed/images.ts`; a few were corrected by hand. To swap a photo: drop a WebP into `public/img/p/`, add an entry to `images.ts` with `w`, `h`, `focus` (and `box` if it has faces), reference its id from `portfolioSpec.ts` / `photographers.ts`, then check the crop in a screenshot. Attribution is in `public/img/CREDITS.md`.
+
+## Locked decisions (2026-10-23)
+1. Name: **Aperta**, tagline "Every occasion, wide open." Keep dark espresso + gold theme (Cormorant + Manrope). Six-blade aperture mark in gold (`Logo.svelte`, PWA icons regenerated).
+2. Arch / rounded-doorway photographer image shape removed everywhere.
+3. Featured and list cards use the Keepsake mounted-print pattern in dark colours (see DESIGN.md).
+4. Long names wrap to 2 balanced lines on cards and profile; profile keeps Noor layout (name below portrait) and about section.
+5. Portraits occasion tile crop shifted to keep the forehead (`ty` 0.3).
 
 ## Gotchas
 - RELEASE BLOCKER: demo images may be non-licensed web images; replace all before any public release.

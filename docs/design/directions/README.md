@@ -16,7 +16,7 @@ Each file shows Home and Photographer Profile in 390x844 phone frames. Open `dir
 Trade-offs: A is the most premium but suits weddings/portraits more than corporate or birthdays. B is the most Indian and warm, with the least "global SaaS" feel. C is the fastest to scan and the cheapest to build, and lets photography carry the brand.
 
 ## Rename candidates: Keepsake and Aperta (fallback: Noor Atelier)
-Open `keepsake.html` / `aperta.html` (screenshots `keepsake.png`, `aperta.png`). Both use real repo photos (`public/img/p/`) with the focal points from `src/data/seed/images.ts`, INR prices, 16px body text, 48-52px tap targets, labelled tab bar and contact buttons (older-user friendly, light grounds, no region-specific motifs). If neither name is chosen, the current dark Noor Atelier theme stays.
+Open `keepsake.html` / `aperta.html` (screenshots `keepsake.png`, `aperta.png`). Both use real repo photos (`public/img/p/`) with the focal points from `src/data/seed/images.ts`, INR prices, 16px body text, 48-52px tap targets, labelled tab bar and contact buttons (older-user friendly, light grounds, no region-specific motifs). DECIDED 2026-10-23: name Aperta, dark Noor theme kept (see DESIGN.md).
 
 | | D. Keepsake | E. Aperta |
 |---|---|---|

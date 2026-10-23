@@ -1,4 +1,4 @@
-# Noor Atelier (photographer discovery demo)
+# Aperta (photographer discovery demo)
 
 A mobile-first web app where clients in India find and contact photographers by occasion (weddings, corporate, birthdays, portraits). Demo only: seeded data, no backend, no auth. Svelte 5 + TypeScript + Vite, Bun, hash routing, local images.
 

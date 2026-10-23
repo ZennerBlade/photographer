@@ -2,7 +2,7 @@
   "name": "photographer",
   "version": "0.2.0",
   "private": true,
-  "description": "Noor Atelier - photographer discovery demo (mobile web)",
+  "description": "Aperta - photographer discovery demo (mobile web)",
   "type": "module",
   "scripts": {
     "dev": "vite",
