@@ -49,7 +49,7 @@ test('photographer onboarding: publish, appear in list/search/filters, edit, del
   await expect(page.getByText('coming soon')).toHaveCount(0);
   await page.getByRole('link', { name: /Join as a photographer/ }).click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('List your');
-  await page.getByRole('button', { name: /Start my profile/ }).click();
+  await page.getByRole('button', { name: /Start with a blank form/ }).click();
 
   // friendly validation on step 1, then walk through all steps
   await next(page);
@@ -150,4 +150,16 @@ test('onboarding validation messages and draft autosave across reload', async ({
     expect(box.height).toBeGreaterThanOrEqual(48);
   }
   expect(await page.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.onb-lead')!).fontSize))).toBeGreaterThanOrEqual(16);
+});
+
+test('demo pre-fill: tapping Continue through every step publishes a profile', async ({ page }) => {
+  await page.goto('/#/join');
+  await page.getByRole('button', { name: /Start my profile/ }).click();
+  for (let i = 1; i <= 7; i++) {
+    await expect(page).toHaveURL(new RegExp(`#/join/${i}$`));
+    await page.getByRole('button', { name: /^(Continue|Review my profile)/ }).click();
+  }
+  await expect(page).toHaveURL(/#\/join\/8$/);
+  await page.getByRole('button', { name: /Publish my profile/ }).click();
+  await expect(page).toHaveURL(/#\/join\/done/);
 });

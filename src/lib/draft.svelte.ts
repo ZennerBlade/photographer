@@ -1,3 +1,4 @@
+import { demoDraft } from '../data/demoDraft';
 import { clearDraft, emptyDraft, loadDraft, saveDraft, type Draft, type StoredProfile } from '../data/userProfiles';
 
 /** The onboarding draft: one reactive object, autosaved to IndexedDB (debounced) on every change. */
@@ -19,6 +20,12 @@ class DraftStore {
     this.d = emptyDraft();
     this.loaded = true;
     this.status = 'idle';
+  }
+  /** Start a draft pre-filled with demo data (falls back to blank if the sample images can't load). */
+  async startDemo(): Promise<void> {
+    await this.startNew();
+    try { this.d = await demoDraft(); } catch { /* keep blank draft */ }
+    await this.flush();
   }
   /** Copy a published profile into the draft so it can be edited; publishing then overwrites it. */
   async startEdit(rec: StoredProfile): Promise<void> {

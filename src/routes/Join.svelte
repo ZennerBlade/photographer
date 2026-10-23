@@ -22,6 +22,10 @@
     await draft.startNew();
     push('/join/1');
   }
+  async function startDemo() {
+    await draft.startDemo();
+    push('/join/1');
+  }
   async function resume() {
     await draft.load(true);
     push(`/join/${Math.min(8, Math.max(1, draft.d.step))}`);
@@ -84,9 +88,10 @@
       <div class="stack">
         {#if ready && saved}
           <button type="button" class="btn2 fill full" onclick={resume}>Continue where I left off{#if stepsDone(saved)} (step {saved.step}){/if}</button>
-          <button type="button" class="btn2 full" onclick={start}>Start again from the beginning</button>
+          <button type="button" class="btn2 full" onclick={startDemo}>Start again from the beginning</button>
         {:else}
-          <button type="button" class="btn2 fill full" onclick={start} disabled={!ready}>Start my profile <Icon name="arrow" size={20} stroke={2} /></button>
+          <button type="button" class="btn2 fill full" onclick={startDemo} disabled={!ready}>Start my profile <Icon name="arrow" size={20} stroke={2} /></button>
+          <button type="button" class="btn2 full" onclick={start} disabled={!ready}>Start with a blank form</button>
         {/if}
       </div>
       <p class="hint note">{BRAND_NAME} is a demo. Your profile is saved only in this browser and you can delete it at any time.</p>
