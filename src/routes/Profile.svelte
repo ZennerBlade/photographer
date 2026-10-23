@@ -12,6 +12,7 @@
   import Viewer from '../components/Viewer.svelte';
   import DemoNotice from '../components/DemoNotice.svelte';
   import NotFound from './NotFound.svelte';
+  import NewBadge from '../components/NewBadge.svelte';
 
   let { params }: { params: { id: string } } = $props();
   const catList = getCategories();
@@ -76,7 +77,7 @@
       <h1>{nameParts.head} <i>{nameParts.last}</i></h1>
       <p class="led">Led by <b>{p.leadName}</b></p>
       <p class="tag">{p.tagline}</p>
-      <div class="meta"><span class="st">★ {formatRating(p.rating)}</span><span>{p.reviewCount} reviews</span><span>{p.yearsExperience} yrs</span><span class="loc"><Icon name="pin" size={13} /> {p.area}</span></div>
+      <div class="meta">{#if p.reviewCount}<span class="st">★ {formatRating(p.rating)}</span><span>{p.reviewCount} reviews</span>{:else if p.isNew}<NewBadge />{/if}<span>{p.yearsExperience} yrs</span><span class="loc"><Icon name="pin" size={13} /> {p.area}</span></div>
     </div>
 
     <div class="sec"><h2>About</h2></div>
@@ -89,7 +90,7 @@
     <div class="sig">
       <span class="eyebrow">The look</span>
       <h3>{p.signatureStyle.title}</h3>
-      <ul>{#each p.signatureStyle.bullets as b}<li>{b}</li>{/each}</ul>
+      {#if p.signatureStyle.bullets.length}<ul>{#each p.signatureStyle.bullets as b}<li>{b}</li>{/each}</ul>{/if}
       <div class="tags">{#each p.signatureStyle.tags as t}<span>{t}</span>{/each}</div>
     </div>
 

@@ -4,6 +4,7 @@
   import { formatINR, formatRating } from '../lib/format';
   import Img from './Img.svelte';
   import HeartButton from './HeartButton.svelte';
+  import NewBadge from './NewBadge.svelte';
 
   let { p, i = 0, eager = false }: { p: Photographer; i?: number; eager?: boolean } = $props();
   const cats = $derived(p.categories.map((c) => CATEGORIES.find((x) => x.id === c)!.short));
@@ -13,11 +14,11 @@
   <a href={`#/photographers/${p.id}`} class="link" aria-label={`${p.name}, ${p.city}, from ${formatINR(p.startingPrice)}`}>
     <div class="im"><Img id={p.leadImage} ratio={112 / 140} ty={0.36} {eager} /></div>
     <div class="body">
-      <h3>{p.name}</h3>
+      <h3>{p.name}{#if p.isNew} <NewBadge />{/if}</h3>
       <p class="loc">{p.area}, {p.city}</p>
       <ul class="chips">{#each cats as c}<li>{c}</li>{/each}</ul>
       <div class="foot">
-        <span class="rate"><b>★ {formatRating(p.rating)}</b> <span>({p.reviewCount})</span></span>
+        {#if p.reviewCount}<span class="rate"><b>★ {formatRating(p.rating)}</b> <span>({p.reviewCount})</span></span>{/if}
         <span class="price">from {formatINR(p.startingPrice)}</span>
       </div>
     </div>
