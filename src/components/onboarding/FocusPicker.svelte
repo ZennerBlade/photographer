@@ -51,7 +51,7 @@
   <p class="how"><b>Drag the ring</b> onto your face, so it is never cut off.</p>
 
   <div class="prevs">
-    <div class="pv"><span>On your card</span><div class="arch">{#if url}<img src={url} alt="" style:object-position={cardPos} />{/if}</div></div>
+    <div class="pv"><span>On your card</span><div class="mount">{#if url}<img src={url} alt="" style:object-position={cardPos} />{/if}</div></div>
     <div class="pv"><span>At the top of your profile</span><div class="hero">{#if url}<img src={url} alt="" style:object-position={heroPos} />{/if}</div></div>
   </div>
 </div>
@@ -68,7 +68,7 @@
   .how b { color: var(--gold-hi); font-weight: 600; }
   .prevs { margin-top: 22px; display: grid; grid-template-columns: 96px 140px; gap: 18px; align-items: end; }
   .pv span { display: block; font-size: 14px; color: var(--mute); margin-bottom: 8px; }
-  .arch { width: 96px; aspect-ratio: 112 / 140; border-radius: 48px 48px 12px 12px; overflow: hidden; border: 1px solid var(--line-strong); background: var(--surf); }
+  .mount { width: 110px; aspect-ratio: 1; padding: 5px; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(212, 176, 106, 0.35); overflow: hidden; border: 1px solid var(--line-strong); background: var(--surf); }
   .hero { width: 140px; aspect-ratio: 390 / 340; border-radius: 14px; overflow: hidden; border: 1px solid var(--line-strong); background: var(--surf); }
-  .arch img, .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mount img, .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
 </style>
