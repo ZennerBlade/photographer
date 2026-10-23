@@ -60,7 +60,7 @@
 
   <div class="all">
     <a class="btn btn-gold" href="#/photographers">View all {totalPhotographers} photographers <Icon name="arrow" size={18} /></a>
-    <button class="join" onclick={() => (join = true)}>Are you a photographer? <u>Join the directory</u></button>
+    <button class="join" onclick={() => (join = true)}>Are you a photographer? <u>List your studio</u></button>
   </div>
   <DemoNotice />
 </div>

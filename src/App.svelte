@@ -5,6 +5,8 @@
   import Profile from './routes/Profile.svelte';
   import Saved from './routes/Saved.svelte';
   import NotFound from './routes/NotFound.svelte';
+  import Join from './routes/Join.svelte';
+  import Onboarding from './routes/Onboarding.svelte';
   import TabBar from './components/TabBar.svelte';
 
   const routes = {
@@ -12,6 +14,8 @@
     '/photographers': List,
     '/photographers/:id': Profile,
     '/saved': Saved,
+    '/join': Join,
+    '/join/:step': Onboarding,
     '*': NotFound,
   };
   const hideTabs = $derived(/^\/photographers\/[^/]+/.test(router.location));
