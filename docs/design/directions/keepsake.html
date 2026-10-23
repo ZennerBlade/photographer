@@ -1,0 +1,118 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Keepsake — Direction D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0}
+:root{--ivory:#f8f2e6;--paper:#efe5d0;--linen:#e4d7bb;--mount:#fffcf4;--ink:#2a211a;--ink2:#4a3d33;--mute:#6b5d4e;--line:#d9ccb2;--ox:#6e1f2b;--ox2:#521520;--foil:#a9803f}
+body{background:#d8cfbd;font-family:Figtree,system-ui,sans-serif;padding:40px 24px 56px;display:flex;flex-direction:column;align-items:center;gap:30px;color:#2f261e}
+.cap{text-align:center;font-size:14px;color:#3b3027;max-width:780px;line-height:1.5}.cap b{display:block;font:500 28px Newsreader,serif;margin-bottom:4px}
+.row{display:flex;gap:56px;flex-wrap:wrap;justify-content:center}.lbl{text-align:center;font-size:12px;color:#6b5d4e;margin-top:14px;letter-spacing:.12em;text-transform:uppercase}
+.phone{width:414px;height:868px;border-radius:58px;background:#17120e;padding:12px;box-shadow:0 40px 80px -30px rgba(40,25,10,.5),inset 0 0 0 2px #3a3029}
+.scr{position:relative;width:390px;height:844px;border-radius:46px;overflow:hidden}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:30px;border-radius:20px;background:#000;z-index:30}
+.sbar{position:absolute;top:18px;left:34px;z-index:31;font:600 15px Figtree;color:var(--ink)}
+.s{position:relative;width:100%;height:100%;overflow:hidden;background:var(--ivory);color:var(--ink);font-size:16px;line-height:1.5}
+.s:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.55;background-image:repeating-linear-gradient(0deg,rgba(120,90,50,.05) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(120,90,50,.045) 0 1px,transparent 1px 3px)}
+.s:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:40;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.s>*{position:relative;z-index:2}.s>.abs{position:absolute}
+img{display:block}svg{display:block}.serif{font-family:Newsreader,serif}
+@keyframes settle{from{opacity:0;transform:translateY(16px) rotate(var(--r0,3deg))}to{opacity:1;transform:translateY(0) rotate(var(--r,0deg))}}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.pl{animation:settle 1.1s cubic-bezier(.22,.8,.3,1) both}.pl:nth-child(2){animation-delay:.12s}.pl:nth-child(3){animation-delay:.24s}.pl:nth-child(4){animation-delay:.36s}
+.fd{animation:fade .9s ease-out both}
+@media (prefers-reduced-motion:reduce){.pl,.fd{animation:none}}
+.top{padding:58px 20px 0;display:flex;justify-content:space-between;align-items:center;height:96px}
+.brand{display:flex;align-items:center;gap:10px}.brand svg{width:36px;height:36px}.wm{font:500 27px/1 Newsreader,serif;letter-spacing:-.01em;color:var(--ink)}.wm i{color:var(--ox);font-weight:400}
+.ib{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--mount);display:grid;place-items:center;color:var(--ox)}
+.eb{margin:6px 20px 0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ox);font-weight:600}
+h1{font:400 34px/1.08 Newsreader,serif;margin:6px 20px 0;letter-spacing:-.01em}h1 i{color:var(--ox)}
+.search{margin:14px 20px 0;height:54px;border-radius:14px;border:1.5px solid var(--ink2);background:var(--mount);display:flex;align-items:center;gap:12px;padding:0 16px;color:var(--mute);font-size:16px}.search svg{color:var(--ox)}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:14px 20px 8px}.sec b{font:500 22px Newsreader,serif}.sec span{font-size:15px;font-weight:600;color:var(--ox);text-decoration:underline;text-underline-offset:4px}
+.occ{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;padding:0 20px}
+.mt{background:var(--mount);padding:6px 6px 8px;border-radius:3px;box-shadow:0 1px 0 rgba(90,60,30,.15),0 8px 18px -8px rgba(70,45,20,.38);position:relative}
+.mt .ph{height:58px;overflow:hidden;position:relative;background:#333}.mt .ph img{width:100%;height:100%;object-fit:cover}
+.mt .ph:before,.mt .ph:after{content:"";position:absolute;top:0;width:14px;height:14px;z-index:2}
+.mt .ph:before{left:0;background:linear-gradient(135deg,var(--paper) 50%,transparent 50%)}.mt .ph:after{right:0;background:linear-gradient(225deg,var(--paper) 50%,transparent 50%)}
+.mt .cp{display:flex;justify-content:space-between;align-items:baseline;padding:5px 3px 0}.mt b{font:500 17px Newsreader,serif}.mt small{font-size:13px;color:var(--mute);font-weight:500}
+.fl{display:flex;gap:16px;padding:6px 20px 0;overflow:hidden}
+.pc{flex:0 0 160px;background:var(--mount);padding:8px 8px 10px;border-radius:3px;box-shadow:0 1px 0 rgba(90,60,30,.15),0 12px 22px -10px rgba(70,45,20,.42);--r:-1.5deg;--r0:3deg;transform:rotate(var(--r))}
+.pc:nth-child(2){--r:1.2deg;--r0:-3deg}.pc:nth-child(3){--r:-.8deg}
+.pc .im{height:96px;overflow:hidden;background:#333}.pc img{width:100%;height:100%;object-fit:cover}
+.pc b{display:block;font:500 17px/1.2 Newsreader,serif;margin-top:8px}.pc .m{font-size:14px;color:var(--mute);font-weight:500}.pc .p{font-size:14px;font-weight:700;color:var(--ox)}
+.tabs{position:absolute!important;left:16px;right:16px;bottom:16px;height:68px;border-radius:20px;background:var(--mount);border:1px solid var(--line);display:flex;padding:6px;gap:4px;z-index:5;box-shadow:0 16px 30px -14px rgba(70,45,20,.5)}
+.tabs div{flex:1;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:var(--mute);font-size:13px;font-weight:600}.tabs .on{background:var(--ox);color:#fff8ea}
+/* profile */
+.nav{display:flex;justify-content:space-between;padding:56px 16px 0}.nav span{width:48px;height:48px;border-radius:50%;background:var(--mount);border:1px solid var(--line);display:grid;place-items:center;color:var(--ox)}
+.lead{display:flex;gap:16px;padding:8px 20px 0;align-items:flex-start}
+.pol{flex:0 0 156px;background:var(--mount);padding:8px 8px 34px;border-radius:3px;box-shadow:0 1px 0 rgba(90,60,30,.15),0 16px 26px -12px rgba(70,45,20,.5);--r:-2deg;--r0:3deg;transform:rotate(-2deg);position:relative}
+.pol .im{height:172px;overflow:hidden;background:#555;position:relative}.pol img{width:100%;height:100%;object-fit:cover;object-position:63% 28%}
+.pol .cp{position:absolute;left:0;right:0;bottom:8px;text-align:center;font:italic 400 15px Newsreader,serif;color:var(--ink2)}
+.pol .tp{position:absolute;top:-9px;left:50%;width:56px;height:18px;margin-left:-28px;background:rgba(185,150,90,.45);transform:rotate(2deg)}
+.id{padding-top:14px}.led{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ox);font-weight:600}.id h2{font:500 29px/1.05 Newsreader,serif;margin:4px 0 6px}.id .st{font-size:15px;color:var(--ink2);font-weight:500;line-height:1.35}.id .rt{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:15px;font-weight:700}.id .rt span{font-weight:500;color:var(--mute)}.star{color:var(--ox)}
+.ab{margin:14px 20px 0;font-size:16px;line-height:1.55;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sig{margin:14px 20px 0;padding:12px 16px 14px;border:1px solid var(--line);background:var(--paper);border-radius:6px;position:relative}
+.sig small{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600}.sig h3{font:italic 400 23px/1.15 Newsreader,serif;color:var(--ox);margin:2px 0 8px}
+.chips{display:flex;gap:8px}.chips span{background:var(--mount);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:600;color:var(--ink2)}
+.h{margin:16px 20px 6px;display:flex;justify-content:space-between;align-items:baseline}.h b{font:500 22px Newsreader,serif}.h span{font-size:14px;color:var(--mute)}
+.pk{margin:0 20px 10px;padding:12px 16px;border-radius:8px;background:var(--mount);border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pk.on{border:2px solid var(--ox);padding:11px 15px;box-shadow:0 10px 20px -12px rgba(110,31,43,.5)}
+.pk b{font:500 20px Newsreader,serif}.pk small{display:block;font-size:14px;color:var(--mute);font-weight:500}.pk .pp{font:500 24px Newsreader,serif;color:var(--ox);white-space:nowrap}.badge{display:inline-block;margin-left:8px;font:700 11.5px Figtree;letter-spacing:.06em;text-transform:uppercase;background:var(--ox);color:#fff8ea;padding:2px 8px;border-radius:999px;vertical-align:3px}
+.cta{position:absolute!important;left:0;right:0;bottom:0;z-index:6;background:var(--mount);border-top:1px solid var(--line);padding:10px 16px 20px;display:flex;gap:8px;box-shadow:0 -10px 24px -14px rgba(70,45,20,.4)}
+.cta a{height:52px;border-radius:14px;border:1.5px solid var(--ink2);display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:700;color:var(--ink);flex:1}.cta a.p{flex:1.7;background:var(--ox);border-color:var(--ox);color:#fff8ea}
+.spec{width:100%;max-width:1000px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px 28px;font-size:14px;color:#3b3027;border-top:1px solid #b9ab92;padding-top:22px}
+.spec h4{margin:0 0 6px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#6b5d4e}.spec p{margin:0;line-height:1.5}
+.sw{display:flex;gap:6px;margin-top:8px}.sw i{width:34px;height:34px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="kp" viewBox="0 0 48 48"><g transform="rotate(-6 24 24)"><rect x="6" y="5" width="36" height="40" rx="2" fill="#fffcf4" stroke="#6e1f2b" stroke-width="2"/><path d="M11 10h26v25H11Z" fill="#6e1f2b"/><path d="M11 35V24a13 13 0 0 1 26 0v11Z" fill="#efe5d0"/><circle cx="24" cy="23" r="4.2" fill="#6e1f2b"/><path d="M16 35c1-5 4-7.500 8-7.500s7 2.500 8 7.500Z" fill="#6e1f2b"/><path d="M11 10l7 0-7 7Z M37 10l-7 0 7 7Z" fill="#efe5d0"/></g></symbol>
+<symbol id="i-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.500 4.500"/></g></symbol>
+<symbol id="i-h" viewBox="0 0 24 24"><path d="M12 20s-7-4.400-7-10a4 4 0 0 1 7-2.400A4 4 0 0 1 19 10c0 5.600-7 10-7 10Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+<symbol id="i-b" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.500 8 6.500v8.500H4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+<symbol id="i-cam" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3.500 8h4l1.500-2h6l1.500 2h4v11h-17Z"/><circle cx="12" cy="13.200" r="3.400"/></g></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M4 20l1.300-4A8 8 0 1 1 8 18.700Z"/><path d="M9.200 9.300c.4 2.400 2.500 4.600 5.100 5.400l1.300-1.300-1.900-1-.9.600c-.8-.4-1.700-1.300-2.100-2.100l.6-.9-1-1.900Z"/></g></symbol>
+<symbol id="i-ph" viewBox="0 0 24 24"><path d="M6 4h3l1.500 4-2 1.300a10 10 0 0 0 5.200 5.200L15 12.500l4 1.500v3a2 2 0 0 1-2 2A13 13 0 0 1 4 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+<symbol id="i-ml" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.500" y="5.500" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></g></symbol>
+</defs></svg>
+<div class="cap"><b>Keepsake</b>Direction D · “Made to be kept.” Ivory paper and linen, ink text, one oxblood accent. Newsreader + Figtree. Polaroid-and-album mounts. Photo-corner mark.</div>
+<div class="row">
+<div><div class="phone"><div class="scr"><div class="notch"></div><span class="sbar">9:41</span><div class="s">
+ <div class="top fd"><div class="brand"><svg><use href="#kp"/></svg><span class="wm">Keep<i>sake</i></span></div><span class="ib"><svg width="22" height="22"><use href="#i-s"/></svg></span></div>
+ <div class="eb fd">Photographers you can trust</div>
+ <h1 class="fd">Photographs you will <i>keep</i> for a lifetime.</h1>
+ <div class="search fd"><svg width="22" height="22"><use href="#i-s"/></svg>Search city, style or name</div>
+ <div class="sec"><b>Choose an occasion</b></div>
+ <div class="occ">
+  <div class="mt pl"><div class="ph"><img src="../../../public/img/p/4138802.webp" style="object-position:43% 27%" alt=""></div><div class="cp"><b>Weddings</b><small>9</small></div></div>
+  <div class="mt pl"><div class="ph"><img src="../../../public/img/p/9275222.webp" style="object-position:41% 67%" alt=""></div><div class="cp"><b>Corporate</b><small>5</small></div></div>
+  <div class="mt pl"><div class="ph"><img src="../../../public/img/p/16220888.webp" style="object-position:50% 45%" alt=""></div><div class="cp"><b>Birthdays</b><small>6</small></div></div>
+  <div class="mt pl"><div class="ph"><img src="../../../public/img/p/8542196.webp" style="object-position:42% 12%" alt=""></div><div class="cp"><b>Portraits</b><small>5</small></div></div>
+ </div>
+ <div class="sec"><b>Featured this season</b><span>View all</span></div>
+ <div class="fl">
+  <div class="pc pl"><div class="im"><img src="../../../public/img/p/lead-aarav-mehta.webp" style="object-position:50% 32%" alt=""></div><b>Aarav Mehta Studio</b><div class="m">Mumbai · ★ 4.9</div><div class="p">from ₹45,000</div></div>
+  <div class="pc pl"><div class="im"><img src="../../../public/img/p/lead-camille-laurent.webp" style="object-position:63% 30%" alt=""></div><b>Camille Laurent</b><div class="m">Bengaluru · ★ 4.8</div><div class="p">from ₹38,000</div></div>
+  <div class="pc pl"><div class="im"><img src="../../../public/img/p/lead-amara-okafor.webp" style="object-position:50% 32%" alt=""></div><b>Amara Okafor</b><div class="m">Bengaluru · ★ 4.9</div><div class="p">from ₹12,000</div></div>
+ </div>
+ <div class="tabs"><div class="on"><svg width="22" height="22"><use href="#i-home"/></svg>Home</div><div><svg width="22" height="22"><use href="#i-cam"/></svg>Photographers</div><div><svg width="22" height="22"><use href="#i-h"/></svg>Saved</div></div>
+</div></div></div><div class="lbl">Home</div></div>
+
+<div><div class="phone"><div class="scr"><div class="notch"></div><span class="sbar">9:41</span><div class="s">
+ <div class="nav"><span><svg width="24" height="24"><use href="#i-b"/></svg></span><span><svg width="24" height="24"><use href="#i-h"/></svg></span></div>
+ <div class="lead"><div class="pol pl"><div class="tp"></div><div class="im"><img src="../../../public/img/p/lead-camille-laurent.webp" alt=""></div><div class="cp">Camille, Bengaluru</div></div>
+  <div class="id fd"><div class="led">Led by</div><h2>Camille Laurent</h2><div class="st">Camille Laurent Photography<br>Indiranagar, Bengaluru</div><div class="rt"><span class="star">★</span>4.8 <span>(98) · 7 years</span></div></div></div>
+ <p class="ab fd">Lyon-born, Bengaluru-based. I photograph weddings of every tradition, Kannada, Tamil, Bengali and Marwari, and I love the small hours before the ceremony. Expect soft window light, jasmine, silk and a bride who is allowed to breathe.</p>
+ <div class="sig fd"><small>Signature style</small><h3>Soft light, quiet brides</h3><div class="chips"><span>Soft</span><span>Bridal</span><span>Intimate</span></div></div>
+ <div class="h"><b>Packages</b><span>INR, all taxes included</span></div>
+ <div class="pk"><div><b>Bridal Morning</b><small>4 hours · 150 photos</small></div><span class="pp">₹38,000</span></div>
+ <div class="pk on"><div><b>Ceremony</b><span class="badge">Most chosen</span><small>8 hours · 500 photos · 24-page album</small></div><span class="pp">₹72,000</span></div>
+ <div class="cta"><a class="p"><svg width="22" height="22"><use href="#i-wa"/></svg>WhatsApp</a><a><svg width="22" height="22"><use href="#i-ph"/></svg>Call</a><a><svg width="22" height="22"><use href="#i-ml"/></svg>Email</a></div>
+</div></div></div><div class="lbl">Photographer profile</div></div>
+</div>
+<div class="spec">
+ <div><h4>Palette</h4><p>Ivory #F8F2E6 · Paper #EFE5D0 · Mount #FFFCF4 · Ink #2A211A · Oxblood #6E1F2B</p><div class="sw"><i style="background:#f8f2e6"></i><i style="background:#efe5d0"></i><i style="background:#fffcf4"></i><i style="background:#2a211a"></i><i style="background:#6e1f2b"></i></div></div>
+ <div><h4>Type</h4><p>Newsreader (classic serif, italic accents) with Figtree (friendly sans, 16px body, 13px labels).</p></div>
+ <div><h4>Mark</h4><p>A tilted print in an album mount with photo corners and a small portrait window, in oxblood. Wordmark: Keep<i>sake</i>.</p></div>
+ <div><h4>Motion</h4><p>Gentle and tactile: prints settle onto the page with a 1.1s ease and a 3 degree straighten, staggered 120ms; text fades up 8px. Taps press a mount down 2px. Off under reduced-motion.</p></div>
+</div>
+</body></html>

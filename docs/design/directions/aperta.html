@@ -1,0 +1,123 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aperta — Direction E</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0}
+:root{--paper:#f3f4f2;--card:#fff;--ink:#0f1114;--ink2:#2c3036;--mute:#575d66;--line:#d3d7da;--line2:#aeb4ba;--sig:#c93a12;--sig-ink:#fff;--graph:#14171b;--graph2:#1d2126;--on-graph:#eceeef}
+body{background:#dfe1e3;font-family:'Hanken Grotesk',system-ui,sans-serif;padding:40px 24px 56px;display:flex;flex-direction:column;align-items:center;gap:30px;color:#1b1e22}
+.cap{text-align:center;font-size:14px;color:#33373c;max-width:760px;line-height:1.5}.cap b{display:block;font:500 26px 'Bodoni Moda',serif;margin-bottom:4px;letter-spacing:.01em}
+.row{display:flex;gap:56px;flex-wrap:wrap;justify-content:center}.lbl{text-align:center;font-size:12px;color:#5a6068;margin-top:14px;letter-spacing:.12em;text-transform:uppercase}
+.phone{width:414px;height:868px;border-radius:58px;background:#0c0d0f;padding:12px;box-shadow:0 40px 80px -30px rgba(10,14,20,.45),inset 0 0 0 2px #2b2e33}
+.scr{position:relative;width:390px;height:844px;border-radius:46px;overflow:hidden}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:30px;border-radius:20px;background:#000;z-index:30}
+.sbar{position:absolute;top:18px;left:34px;z-index:31;font:600 15px 'Hanken Grotesk';color:var(--ink)}.sbar.w{color:#fff}
+.s{position:relative;width:100%;height:100%;overflow:hidden;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.45}
+img{display:block}svg{display:block}
+.serif{font-family:'Bodoni Moda',serif}
+/* motion */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes iris{from{transform:rotate(-60deg)}to{transform:none}}
+.rv{animation:rise .8s cubic-bezier(.16,1,.3,1) both}.rv.d1{animation-delay:.08s}.rv.d2{animation-delay:.16s}.rv.d3{animation-delay:.24s}
+.mk{animation:iris 1.1s cubic-bezier(.16,1,.3,1) both}
+@media (prefers-reduced-motion:reduce){.rv,.mk{animation:none}}
+/* header */
+.top{padding:58px 20px 0;display:flex;justify-content:space-between;align-items:center;height:106px;margin-bottom:6px}
+.brand{display:flex;align-items:center;gap:10px}.brand svg{width:32px;height:32px;color:var(--graph)}
+.wm{font:600 17px 'Hanken Grotesk';letter-spacing:.34em;text-transform:uppercase;color:var(--ink)}
+.ib{width:48px;height:48px;border:1px solid var(--ink);display:grid;place-items:center;border-radius:4px;background:transparent;color:var(--ink)}
+.rule{height:1px;background:var(--line2);margin:0 20px}
+.idx{display:flex;justify-content:space-between;padding:10px 20px 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:500}
+h1{font:400 41px/1.02 'Bodoni Moda',serif;letter-spacing:-.015em;margin:14px 20px 0;color:var(--ink)}h1 i{color:var(--sig);font-weight:400}
+.search{margin:16px 20px 0;height:54px;display:flex;border:1px solid var(--ink);border-radius:4px;background:var(--card)}
+.search span{flex:1;padding:0 16px;display:flex;align-items:center;font-size:16px;color:var(--mute)}.search b{width:54px;display:grid;place-items:center;background:var(--sig);color:#fff;border-radius:0 3px 3px 0}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:20px 20px 10px}.sec b{font:500 12px 'Hanken Grotesk';letter-spacing:.2em;text-transform:uppercase}.sec span{font-size:14px;font-weight:600;color:var(--sig);text-decoration:underline;text-underline-offset:4px}.sec em{font:400 italic 14px 'Bodoni Moda';color:var(--mute)}
+.occ{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:0 20px;background:var(--ink);border:1px solid var(--ink);border-radius:4px;overflow:hidden}
+.t{position:relative;height:84px;background:#222;overflow:hidden}.t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,14,0) 30%,rgba(10,12,14,.82))}
+.t div{position:absolute;z-index:2;left:12px;right:10px;bottom:9px;color:#fff;display:flex;justify-content:space-between;align-items:flex-end}.t b{font-size:16px;font-weight:600;line-height:1.1}.t small{display:block;font-size:12px;opacity:.88;font-weight:500;margin-top:2px}.t i{font:italic 14px 'Bodoni Moda';opacity:.9}
+.fl{display:flex;gap:14px;padding:0 20px;overflow:hidden}.fc{flex:0 0 150px}.fc .im{position:relative;height:150px;border-radius:4px;overflow:hidden;background:#222}.fc img{width:100%;height:100%;object-fit:cover}
+.fc .tag{position:absolute;left:8px;top:8px;background:var(--paper);color:var(--ink);font-size:12px;font-weight:600;padding:3px 8px;border-radius:3px}
+.fc b{display:block;font-size:17px;font-weight:600;margin-top:10px;line-height:1.2}.fc .m{font-size:14px;color:var(--mute);margin-top:2px}.fc .p{font-size:14px;margin-top:4px;color:var(--ink);font-weight:600}.fc .p u{text-decoration:none;color:var(--sig)}
+.tabs{position:absolute;left:16px;right:16px;bottom:16px;height:68px;background:var(--graph);border-radius:6px;display:flex;padding:6px;gap:4px;z-index:5;box-shadow:0 18px 40px -16px rgba(10,14,20,.55)}
+.tabs div{flex:1;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#a7adb4;font-size:12px;font-weight:600}.tabs .on{background:var(--sig);color:#fff}
+/* profile */
+.hero{position:relative;height:262px}.hero img{width:100%;height:100%;object-fit:cover;object-position:55% 10%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,14,.5),transparent 28%,transparent 70%,rgba(10,12,14,.25))}
+.gl{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,transparent 33%,rgba(255,255,255,.28) 33%,rgba(255,255,255,.28) calc(33% + 1px),transparent calc(33% + 1px),transparent 66%,rgba(255,255,255,.28) 66%,rgba(255,255,255,.28) calc(66% + 1px),transparent calc(66% + 1px))}
+.nav{position:absolute;top:56px;left:16px;right:16px;display:flex;justify-content:space-between;z-index:4}.nav span{width:48px;height:48px;background:var(--paper);border-radius:4px;display:grid;place-items:center;color:var(--ink)}
+.hero .cnt{position:absolute;z-index:3;right:16px;bottom:12px;color:#fff;font-size:12px;letter-spacing:.14em;font-weight:600;background:rgba(15,17,20,.7);padding:4px 8px;border-radius:3px}
+.hd{padding:16px 20px 0}.led{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--sig)}.led:before{content:"";width:22px;height:2px;background:var(--sig)}
+.hd h2{font:400 34px/1.05 'Bodoni Moda',serif;margin:6px 0 0;letter-spacing:-.01em}.hd h2 i{color:var(--sig)}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;font-size:15px;color:var(--ink2);font-weight:500}.meta b{color:var(--ink)}.meta .d{color:var(--line2)}
+.ab{margin:12px 20px 0;font-size:16px;line-height:1.55;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sig{margin:14px 20px 0;background:var(--graph);color:var(--on-graph);border-radius:4px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center}
+.sig small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#b7bcc2;font-weight:600}.sig h3{grid-column:1;margin:0;font:italic 400 22px/1.15 'Bodoni Moda',serif}.sig svg{grid-row:1/3;grid-column:2;width:36px;height:36px;color:#8a9097}
+.chips{grid-column:1/3;display:flex;gap:8px;margin-top:10px}.chips span{border:1px solid #4a5058;border-radius:3px;padding:3px 10px;font-size:14px;font-weight:500}
+.pk{margin:0 20px;border-top:1px solid var(--line2)}.pk .r{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0 12px 14px;border-bottom:1px solid var(--line);position:relative}
+.pk .r.on:before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:4px;background:var(--sig);border-radius:2px}
+.pk b{font-size:17px;font-weight:600}.pk small{display:block;font-size:14px;color:var(--mute);margin-top:1px}.pk .pp{font:500 24px 'Bodoni Moda',serif;white-space:nowrap}.pk .pop{font-size:12px;font-weight:700;color:var(--sig);letter-spacing:.08em;text-transform:uppercase;margin-left:6px}
+.cta{position:absolute;left:0;right:0;bottom:0;z-index:6;background:var(--paper);border-top:1px solid var(--line2);padding:10px 16px 20px;display:flex;gap:8px}
+.cta a{height:52px;border:1px solid var(--ink);border-radius:4px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:600;color:var(--ink);flex:1}.cta a.p{flex:1.7;background:var(--sig);border-color:var(--sig);color:#fff}
+/* spec */
+.spec{width:100%;max-width:1000px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px 28px;font-size:14px;color:#33373c;border-top:1px solid #b9bec3;padding-top:22px}
+.spec h4{margin:0 0 6px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#5a6068}.spec p{margin:0;line-height:1.5}
+.sw{display:flex;gap:6px;margin-top:8px}.sw i{width:34px;height:34px;border-radius:3px;border:1px solid rgba(0,0,0,.18)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="ap" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="currentColor"/><g stroke="var(--paper)" stroke-width="1.7" stroke-linecap="round"><path d="M24.00 16.00L38.62 7.56"/><path d="M30.93 20.00L45.55 28.44"/><path d="M30.93 28.00L30.93 44.88"/><path d="M24.00 32.00L9.38 40.44"/><path d="M17.07 28.00L2.45 19.56"/><path d="M17.07 20.00L17.07 3.12"/></g><path d="M24 16L30.93 20V28L24 32L17.07 28V20Z" fill="var(--sig)"/></symbol>
+<symbol id="i-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></g></symbol>
+<symbol id="i-h" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-b" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5v8.5H4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-cam" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3.5 8h4l1.5-2h6l1.5 2h4v11h-17Z"/><circle cx="12" cy="13.2" r="3.4"/></g></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7Z"/><path d="M9.2 9.3c.4 2.4 2.5 4.6 5.1 5.4l1.3-1.3-1.9-1-.9.6c-.8-.4-1.7-1.3-2.1-2.1l.6-.9-1-1.9Z"/></g></symbol>
+<symbol id="i-ph" viewBox="0 0 24 24"><path d="M6 4h3l1.5 4-2 1.3a10 10 0 0 0 5.2 5.2L15.000 12.500l4 1.500v3a2 2 0 0 1-2 2A13 13 0 0 1 4 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-ml" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4 7 8 6 8-6"/></g></symbol>
+</defs></svg>
+
+<div class="cap"><b>Aperta</b>Direction E · “Every occasion, wide open.” Light cool-gallery ground, graphite and one signal vermilion. Bodoni Moda + Hanken Grotesk. Aperture-blade mark.</div>
+<div class="row">
+<div><div class="phone"><div class="scr"><div class="notch"></div><span class="sbar">9:41</span><div class="s">
+ <div class="top rv"><div class="brand"><svg class="mk"><use href="#ap"/></svg><span class="wm">Aperta</span></div><span class="ib"><svg width="22" height="22"><use href="#i-s"/></svg></span></div>
+ <div class="rule"></div>
+ <h1 class="rv d1">Open to every <i>occasion.</i></h1>
+ <div class="search rv d2"><span>Search city, style or name</span><b><svg width="22" height="22"><use href="#i-s"/></svg></b></div>
+ <div class="sec rv d2"><b>Occasions</b><em>04 categories</em></div>
+ <div class="occ rv d3">
+  <div class="t"><img src="../../../public/img/p/4138802.webp" style="object-position:43% 27%" alt=""><div><span><b>Weddings</b><small>9 photographers</small></span><i>01</i></div></div>
+  <div class="t"><img src="../../../public/img/p/9275222.webp" style="object-position:41% 67%" alt=""><div><span><b>Corporate</b><small>5 photographers</small></span><i>02</i></div></div>
+  <div class="t"><img src="../../../public/img/p/16220888.webp" style="object-position:50% 45%" alt=""><div><span><b>Birthdays</b><small>6 photographers</small></span><i>03</i></div></div>
+  <div class="t"><img src="../../../public/img/p/8542196.webp" style="object-position:42% 19%" alt=""><div><span><b>Portraits</b><small>5 photographers</small></span><i>04</i></div></div>
+ </div>
+ <div class="sec"><b>Featured this season</b><span>View all</span></div>
+ <div class="fl">
+  <div class="fc"><div class="im"><img src="../../../public/img/p/lead-aarav-mehta.webp" style="object-position:50% 36%" alt=""><span class="tag">★ 4.9</span></div><b>Aarav Mehta Studio</b><div class="m">Mumbai · Weddings</div><div class="p"><u>from</u> ₹45,000</div></div>
+  <div class="fc"><div class="im"><img src="../../../public/img/p/lead-sofia-marin.webp" style="object-position:55% 36%" alt=""><span class="tag">★ 4.8</span></div><b>Sofia Marin Frames</b><div class="m">Delhi · Portraits</div><div class="p"><u>from</u> ₹18,000</div></div>
+  <div class="fc"><div class="im"><img src="../../../public/img/p/lead-amara-okafor.webp" style="object-position:50% 36%" alt=""><span class="tag">★ 4.9</span></div><b>Amara Okafor Moments</b><div class="m">Bengaluru · Birthdays</div><div class="p"><u>from</u> ₹12,000</div></div>
+ </div>
+ <div class="tabs"><div class="on"><svg width="22" height="22"><use href="#i-home"/></svg>Home</div><div><svg width="22" height="22"><use href="#i-cam"/></svg>Photographers</div><div><svg width="22" height="22"><use href="#i-h"/></svg>Saved</div></div>
+</div></div></div><div class="lbl">Home</div></div>
+
+<div><div class="phone"><div class="scr"><div class="notch"></div><span class="sbar w">9:41</span><div class="s">
+ <div class="hero"><img src="../../../public/img/p/lead-sofia-marin.webp" alt=""><div class="gl"></div><div class="nav"><span><svg width="24" height="24"><use href="#i-b"/></svg></span><span><svg width="24" height="24"><use href="#i-h"/></svg></span></div><span class="cnt">PORTRAITS · DELHI</span></div>
+ <div class="hd rv"><div class="led">Led by Sofia Marin</div><h2>Sofia Marin <i>Frames</i></h2>
+  <div class="meta"><span><b>★ 4.8</b> (189)</span><span class="d">/</span><span>Gurugram, Delhi</span><span class="d">/</span><span>9 years</span></div></div>
+ <p class="ab rv d1">Madrid-born fashion and lookbook photographer working with designers, models and creators across Delhi NCR. I style, light and direct each shoot like a short editorial, from saree drapes to streetwear.</p>
+ <div class="sig rv d2"><small>Signature style</small><h3>Moody editorial colour</h3><svg><use href="#ap"/></svg><div class="chips"><span>Editorial</span><span>Moody</span><span>Fashion</span></div></div>
+ <div class="sec rv d3" style="margin-top:16px;margin-bottom:6px"><b>Packages</b><em>INR, all taxes included</em></div>
+ <div class="pk rv d3">
+  <div class="r"><div><b>Look Test</b><small>2 hours · 1 look · 20 photos</small></div><span class="pp">₹18,000</span></div>
+  <div class="r on"><div><b>Editorial Day<span class="pop">Most chosen</span></b><small>5 hours · 3 looks · 50 photos</small></div><span class="pp">₹42,000</span></div>
+  <div class="r"><div><b>Lookbook</b><small>1 day · 15 outfits · 120 photos</small></div><span class="pp">₹85,000</span></div>
+ </div>
+ <div class="cta"><a class="p"><svg width="22" height="22"><use href="#i-wa"/></svg>WhatsApp</a><a><svg width="22" height="22"><use href="#i-ph"/></svg>Call</a><a><svg width="22" height="22"><use href="#i-ml"/></svg>Email</a></div>
+</div></div></div><div class="lbl">Photographer profile</div></div>
+</div>
+
+<div class="spec">
+ <div><h4>Palette</h4><p>Paper #F3F4F2 · Ink #0F1114 · Graphite #14171B · Signal #C93A12 · Line #D3D7DA</p><div class="sw"><i style="background:#f3f4f2"></i><i style="background:#0f1114"></i><i style="background:#14171b"></i><i style="background:#c93a12"></i><i style="background:#d3d7da"></i></div></div>
+ <div><h4>Type</h4><p>Bodoni Moda (display, italic accents) with Hanken Grotesk (UI, 16px body, 12px caps labels).</p></div>
+ <div><h4>Mark</h4><p>Six iris blades around a hexagonal opening in signal red: an aperture that reads as “open”. Wordmark: APERTA, tracked caps.</p></div>
+ <div><h4>Motion</h4><p>Crisp and mechanical. Content rises 14px in 800ms on a fast-out curve; the mark’s blades rotate open once on load; press states snap in 120ms. All off under reduced-motion.</p></div>
+</div>
+</body></html>
