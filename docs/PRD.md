@@ -34,6 +34,8 @@ Status: LOCKED v1.0, 2026-10-19 | Scope: demo only | Platform: mobile-app-only (
 ## 3. MVP Scope
 
 ### 3.1 Decision: photographer profile editor
+> **Scope note (2026-10-23): photographer onboarding moved INTO the demo.** A no-backend onboarding flow (8 steps, drafts and published profiles in the browser's IndexedDB) now replaces the "Coming soon" sheet; published demo profiles appear in the directory with a "New" badge. Auth, real uploads to a server, dashboards and payments stay out (Phase 1). See docs/HANDBOOK.md, "Photographer onboarding". The text below is the original decision and is superseded where it conflicts.
+
 **Locked: OUT of demo MVP (deferred to Phase 1).** Rationale: the demo's value is the client experience; an editor needs auth, uploads, and persistence, which contradicts "no real backend". Profiles are seeded as static data (JSON/TS module). To keep the photographer story credible, include a non-interactive "Are you a photographer? Join the directory" link on the home or profile screen that opens a simple "Coming soon" sheet (optional, Should-have).
 
 ### 3.2 Categories (fixed)
@@ -59,7 +61,7 @@ Status: LOCKED v1.0, 2026-10-19 | Scope: demo only | Platform: mobile-app-only (
 - Booking, availability calendars, payments, deposits, invoices
 - In-app chat or messaging
 - User accounts, login, sign-up (client or photographer)
-- Photographer profile editor / dashboard / uploads
+- Photographer dashboard, auth, server-side uploads (a local-only onboarding and edit flow is in the demo as of 2026-10-23)
 - Reviews submission (ratings shown are seeded read-only values)
 - Real backend, database, admin panel, real geolocation or maps
 - Desktop and tablet layouts (wide screens only get a cosmetic phone frame around the same mobile layout)
@@ -227,7 +229,7 @@ Not researched live; confirm before relying on any claim.
 2. **Region**: India, INR, Indian cities, Indian names.
 3. **Images**: best-looking real photography (free stock e.g. Unsplash/Pexels; other web images acceptable for the private on-device demo). AI-generated only as last resort. **RELEASE BLOCKER**: replace all images before any public release.
 4. **Mobile-app-only**: a mobile app rendered on the web. No desktop layout; cosmetic phone frame on wide screens (CSS only); 375-430px; bottom tab bar, sheets, safe areas.
-5. **Photographer profile editor**: OUT of demo (Phase 1); profiles are seed data.
+5. **Photographer profile editor**: OUT of demo (Phase 1); profiles are seed data. *Amended 2026-10-23: a local-only onboarding flow (create, edit, delete a demo profile) is IN the demo.*
 6. **Shortlist/Saved**: IN scope, persisted in `localStorage`, with a Saved tab.
 7. **Filters/sort**: IN scope; price filter on starting price.
 8. **Contact details**: fake numbers/emails with a "Demo data" notice.
